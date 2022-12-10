@@ -1,0 +1,48 @@
+---
+import Cursor from '../components/Cursor.astro'
+import Sidebar from '../components/Sidebar'
+export interface Props {
+  title: string
+}
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link
+      rel='preconnect'
+      href='https://fonts.gstatic.com'
+      crossorigin='true'
+    />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Red+Hat+Mono:wght@200;300;500&display=swap'
+      rel='stylesheet'
+    />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class='bg-neutral-900'>
+    <Cursor />
+    <Sidebar client:only />
+    <div class='absolute top-0 right-0 text-gray-400'>
+      <span class='md:hidden'>sm</span>
+      <span class='hidden md:block lg:hidden'>md</span>
+      <span class='hidden lg:block xl:hidden'>lg</span>
+      <span class='hidden xl:block'>xl</span>
+    </div>
+    <slot />
+  </body>
+</html>
+
+<style>
+  body {
+    background-image: radial-gradient(rgb(39, 39, 39) 1px, transparent 0);
+    background-size: 60px 60px;
+    background-position: -19px -19px;
+  }
+</style>

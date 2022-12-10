@@ -1,0 +1,77 @@
+---
+import chevron from '../assets/chevron.svg'
+import chevron2 from '../assets/chevron2.svg'
+---
+
+<div class='font-redhat absolute'>
+  <div class='flex items-center'>
+    <div class='flex'>
+      <img src={chevron} alt='' />
+      <img src={chevron2} alt='' />
+    </div>
+    <span
+      class='text-mat-blue opacity-90 text-lg font-thin self-center mb-[2px] mx-2'
+      >root</span
+    >
+    <div class='flex'></div>
+    <p
+      id='cmd'
+      class='text-lg font-medium text-gray-300 mb-[2px] whitespace-nowrap'
+    >
+      <span id='prefix-cmd' class='text-yellow-400'></span>
+      <span id='suffix-cmd'></span>
+    </p>
+    <div
+      id='cursor-1'
+      class='w-[9px] h-6 animate-blink ml-[1px] border-mat-purple border'
+    >
+    </div>
+  </div>
+
+  <div id='install-msg' class='hidden'>
+    <p class='text-gray-300 ml-8 font-light whitespace-nowrap'>
+      Installing dependancies
+    </p>
+    <span id='progress-bar' class='flex ml-2 text-gray-300'>
+      ⦗
+      <span id='bars' class='text-mat-green'></span>
+      <span id='shades'>░░░░░░░░░░</span>
+      ⦘
+      <span id='percent' class='ml-2 text-mat-purple font-light'>0%</span>
+    </span>
+  </div>
+</div>
+
+<script>
+  import { gsap } from 'gsap'
+  import { TextPlugin } from 'gsap/TextPlugin'
+  gsap.registerPlugin(TextPlugin)
+
+  let bar = '█'
+  let shade = '░'
+
+  let tl = gsap.timeline()
+  tl.to('#cursor-1', { duration: 0, backgroundColor: '#c084fc', delay: 1 })
+  tl.to('#prefix-cmd', { duration: 0.6, text: 'npx' })
+  tl.to('#suffix-cmd', { duration: 2, text: 'create-portfolio@latest' })
+  tl.to('#cursor-1', { duration: 0, display: 'none' })
+  tl.to('#install-msg', { duration: 0, display: 'flex' })
+
+  tl.to('#bars', { duration: 0, text: '█' })
+  tl.to('#shades', { duration: 0, text: '░░░░░░░░░' })
+  tl.to('#percent', { duration: 0, text: '11%' })
+  tl.to('#bars', { duration: 0, text: '███', delay: 0.3 })
+  tl.to('#shades', { duration: 0, text: '░░░░░░░' })
+  tl.to('#bars', { duration: 0, text: '████', delay: 0.3 })
+  tl.to('#shades', { duration: 0, text: '░░░░░░' })
+  tl.to('#bars', { duration: 0, text: '█████', delay: 0.3 })
+  tl.to('#shades', { duration: 0, text: '░░░░░' })
+  tl.to('#bars', { duration: 0, text: '███████', delay: 0.3 })
+  tl.to('#shades', { duration: 0, text: '░░░' })
+  tl.to('#bars', { duration: 0, text: '████████', delay: 0.3 })
+  tl.to('#shades', { duration: 0, text: '░░' })
+  tl.to('#bars', { duration: 0, text: '█████████', delay: 0.3 })
+  tl.to('#shades', { duration: 0, text: '░' })
+  tl.to('#bars', { duration: 0, text: '██████████', delay: 0.3 })
+  tl.to('#shades', { duration: 0, text: '' })
+</script>
