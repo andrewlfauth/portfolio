@@ -14,8 +14,8 @@ const cursorStyles = [
   {
     id: 2,
     state: { custom: true, style: 'catppuccin' },
-    border: 'border-cat-pink',
-    bg: 'bg-cat-blue',
+    border: 'border-cat-blue',
+    bg: 'bg-cat-pink',
   },
   {
     id: 3,

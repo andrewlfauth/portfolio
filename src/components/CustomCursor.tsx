@@ -82,7 +82,11 @@ function CustomCursor() {
         style={{ transition: 'width .2s, height .2s' }}
         className={INNER_STYLES}
       ></div>
-      <div ref={outerRef} className={OUTER_STYLES}></div>
+      <div
+        ref={outerRef}
+        style={{ transition: 'width 100ms, height 100ms' }}
+        className={OUTER_STYLES}
+      ></div>
     </div>
   )
 }
