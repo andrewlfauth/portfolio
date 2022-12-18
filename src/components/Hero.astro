@@ -1,88 +1,67 @@
 ---
+import github from '../assets/github.svg'
+import linkedin from '../assets/linkedin.svg'
+import resume from '../assets/resume.svg'
+import P from './P.astro'
 ---
 
 <div
-  id='hero-container'
-  class='h-screen w-screen relative overflow-hidden hidden pointer-events-none'
+  class='flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between px-4 sm:px-6 lg:px-20 xl:px-44 py-52 overflow-hidden'
 >
-  <div
-    id='bubbles'
-    class='relative flex space-x-1 sm:space-x-2 md:space-x-4 lg:space-x-6 xl:space-x-8'
-  >
-    <span style='--i:11;'></span>
-    <span style='--i:12;'></span>
-    <span style='--i:24;'></span>
-    <span style='--i:10;'></span>
-    <span style='--i:14;'></span>
-    <span style='--i:23;'></span>
-    <span style='--i:18;'></span>
-    <span style='--i:16;'></span>
-    <span style='--i:19;'></span>
-    <span style='--i:20;'></span>
-    <span style='--i:22;'></span>
-    <span style='--i:25;'></span>
-    <span style='--i:18;'></span>
-    <span style='--i:21;'></span>
-    <span style='--i:15;'></span>
-    <span style='--i:13;'></span>
-    <span style='--i:26;'></span>
-    <span style='--i:17;'></span>
-    <span style='--i:13;'></span>
-    <span style='--i:28;'></span>
-    <span style='--i:11;'></span>
-    <span style='--i:12;'></span>
-    <span style='--i:24;'></span>
-    <span style='--i:10;'></span>
-    <span style='--i:14;'></span>
-    <span style='--i:23;'></span>
-    <span style='--i:18;'></span>
-    <span style='--i:16;'></span>
-    <span style='--i:19;'></span>
-    <span style='--i:20;'></span>
-    <span style='--i:22;'></span>
-    <span style='--i:25;'></span>
-    <span style='--i:18;'></span>
-    <span style='--i:21;'></span>
-    <span style='--i:15;'></span>
-    <span style='--i:13;'></span>
-    <span style='--i:26;'></span>
-    <span style='--i:17;'></span>
-    <span style='--i:13;'></span>
-    <span style='--i:28;'></span>
+  <div class='shrink-0'>
+    <h1
+      class='text-4xl md:text-6xl lg:text-7xl font-inter font-bold tracking-tight text-gray-50 text-center lg:text-left'
+    >
+      Andrew L Fauth
+    </h1>
+    <p
+      id='hero-p'
+      class='md:text-2xl font-redhat max-w-lg pt-4 text-cat-blue text-center lg:text-left mx-auto lg:mx-0 px-4 md:px-0'
+    >
+      Passionate web developer with a full-stack skillset.
+    </p>
+
+    <div id='hero-btns' class='flex pt-4 mx-auto md:space-x-4 lg:mx-0 w-fit'>
+      <button
+        class='w-[156px] h-[52px] rounded-lg border-2 border-gray-800 text-nightowl-blue text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02]'
+      >
+        contact
+      </button>
+      <button
+        class='w-[52px] h-[52px] rounded-lg border-2 border-gray-800 flex items-center justify-center select-none hover:scale-[1.02] mx-2'
+      >
+        <img src={github} alt='github' class='w-8' />
+      </button>
+      <button
+        class='w-[52px] h-[52px] rounded-lg border-2 border-gray-800 flex items-center justify-center select-none hover:scale-[1.02] mr-2'
+      >
+        <img src={linkedin} alt='linkedin' class='w-8' />
+      </button>
+      <button
+        class='w-[52px] h-[52px] rounded-lg border-2 border-gray-800 flex items-center justify-center select-none hover:scale-[1.02]'
+      >
+        <img src={resume} alt='resume' class='w-[28px]' />
+      </button>
+    </div>
   </div>
+  <P />
 </div>
 
 <script>
-  setTimeout(
-    () => (document.getElementById('hero-container')!.style.display = 'block'),
-    4000
-  )
+  import { settings } from '../stores/settings'
+
+  let heroBtns = document.querySelector('#hero-btns') as HTMLElement
+  heroBtns.style.transitionDelay = '2ms'
+
+  settings.subscribe((v) => {
+    if (v.cursor.custom) {
+      for (let i = 0; i < heroBtns.children.length; i++) {
+        heroBtns.children[i].classList.add('cursor-none')
+      }
+    } else {
+      for (let i = 0; i < heroBtns.children.length; i++) {
+        heroBtns.children[i].classList.remove('cursor-none')
+      }
+    }
+  })
 </script>
-
-<style>
-  #bubbles span {
-    position: relative;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgb(4, 61, 87);
-    box-shadow: 0 0 0 10px #032e3844, 0 0 30px #0e6c81, 0 0 100px #0b3a77;
-    animation: float 5s linear infinite;
-    animation-duration: calc(125s / var(--i));
-    z-index: -5;
-  }
-
-  #bubbles span:nth-child(even) {
-    background-color: #cf63e79d;
-    box-shadow: 0 0 0 10px #57082344, 0 0 50px #8f1385, 0 0 100px #700a74;
-  }
-
-  @keyframes float {
-    0% {
-      transform: translateY(100vh) scale(0);
-    }
-    100% {
-      transform: translateY(-10vh) scale(0.6);
-    }
-  }
-</style>

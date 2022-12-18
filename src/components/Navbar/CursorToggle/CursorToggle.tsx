@@ -3,28 +3,26 @@ import { settings } from '../../../stores/settings'
 import autoAnimate from '@formkit/auto-animate'
 import clsx from 'clsx'
 import cursorStyles from './cursorStyles'
+import useDropdown from '../../hooks/useDropdown'
 
 function CursorToggle() {
-  const [expand, setExpand] = useState(false)
+  const { expand, setExpand, parentRef } = useDropdown()
   const [activeCursorIdx, setActiveCursorIdx] = useState(0)
-  const parentRef = useRef<HTMLLIElement>(null)
 
   const changeCursor = (value: { custom: boolean; style: string }) => {
     settings.setKey('cursor', value)
     setExpand(false)
   }
 
-  useEffect(() => {
-    parentRef.current &&
-      autoAnimate(parentRef.current, { duration: 200, easing: 'ease-out' })
-  }, [parentRef])
-
-  let STYLES = clsx(
+  let _ = clsx(
     'border-neutral-700 bg-gray-300 border-mat-purple bg-mat-green border-cat-blue border-cat-pink border-cobalt-blue border-cobalt-yellow'
   )
 
   return (
-    <li ref={parentRef} class='border-2 border-gray-800 rounded-lg'>
+    <li
+      ref={parentRef}
+      class='border-2 border-gray-800 rounded-lg bg-neutral-900'
+    >
       <CursorButton
         onClick={
           expand
@@ -68,14 +66,16 @@ const CursorButton = ({
   return (
     <button
       onClick={onClick}
-      className='group flex items-center justify-center rounded-lg w-12 h-12 realtive'
+      className='group flex items-center justify-center rounded-lg w-[35px] h-[35px] md:w-12 md:h-12 realtive'
     >
       {!isXBtn ? (
         <>
           <div
-            className={`${border} w-8 h-8 border-2  absolute rounded-full`}
+            className={`${border} w-6 h-6 md:w-8 md:h-8 border-2 absolute rounded-full`}
           ></div>
-          <div className={`${bg} w-3 h-3 absolute rounded-full`}></div>
+          <div
+            className={`${bg} w-2 h-2 md:w-3 md:h-3 absolute rounded-full`}
+          ></div>
         </>
       ) : (
         <>

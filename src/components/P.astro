@@ -1,0 +1,70 @@
+---
+import planet from '../assets/a.png'
+import moon from '../assets/moon.jpg'
+---
+
+<div class='scale-[.6] md:scale-[.7] lg:scale-[.8] mt-12md: mt-20 lg:-mt-4'>
+  <div
+    style={{ backgroundImage: 'url(' + planet + ')' }}
+    class='planet bg-repeat-x'
+  >
+    <div
+      style={{
+        backgroundImage: 'url(' + moon + ')',
+      }}
+      class='moon relative'
+    >
+      <img
+        src='https://res.cloudinary.com/dpnkrz8c8/image/upload/v1670965947/portfolio/krlnaehopqzazdppgleb.svg'
+        alt=''
+        class='w-6 absolute -left-6'
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .planet {
+    width: 20em;
+    height: 20em;
+    background-size: 200% 100%;
+    box-shadow: inset -2em -2em 2em #000, -0.5em -0.5em 1em rgb(54, 72, 87);
+    position: relative;
+    background-repeat: repeat !important;
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+  }
+  .moon {
+    width: 6em;
+    height: 6em;
+    position: absolute;
+    left: -11em;
+    top: 50%;
+    animation: rotate 3s linear infinite, orbit 20s infinite ease-in-out;
+    z-index: 1;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: inset -1.5em -1.5em 1.5em #000, -0.2em -0.2em 0.5em #ccc;
+  }
+  @keyframes rotate {
+    to {
+      background-position: -200% 0;
+    }
+  }
+  @keyframes orbit {
+    49% {
+      z-index: 1;
+    }
+    50% {
+      left: 25em;
+      top: -2em;
+      z-index: -1;
+    }
+    99% {
+      z-index: -1;
+    }
+    100% {
+      left: -11em;
+    }
+  }
+</style>

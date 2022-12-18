@@ -1,6 +1,6 @@
 ---
 import CustomCursor from '../components/CustomCursor'
-import Sidebar from '../components/Sidebar'
+import Navbar from '../components/Navbar'
 export interface Props {
   title: string
 }
@@ -26,10 +26,10 @@ const { title } = Astro.props
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class='bg-neutral-900 cursor-none'>
+  <body class='bg-neutral-900 cursor-none overflow-x-hidden'>
     <CustomCursor client:only />
-    <Sidebar client:only />
-    <div class='absolute top-0 right-0 text-gray-400'>
+    <Navbar client:only />
+    <div class='fixed top-0 right-2 text-gray-400'>
       <span class='md:hidden'>sm</span>
       <span class='hidden md:block lg:hidden'>md</span>
       <span class='hidden lg:block xl:hidden'>lg</span>

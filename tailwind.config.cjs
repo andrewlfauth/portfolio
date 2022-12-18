@@ -36,6 +36,7 @@ module.exports = {
       fontFamily: {
         inter: '"Inter", sans-serif',
         redhat: '"Red Hat Mono", mono',
+        gor: '"EB Garamond", serif',
       },
     },
   },
