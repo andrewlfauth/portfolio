@@ -5,6 +5,7 @@ import Sparks from '../components/Sparks.astro'
 import Hero from '../components/Hero.astro'
 import UFO from '../components/UFO.astro'
 import Screentime from '../components/Screentime'
+import TestForm from '../components/TestForm'
 ---
 
 <Layout title='Welcome to Astro.'>
@@ -13,12 +14,7 @@ import Screentime from '../components/Screentime'
     <Sparks />
     <!-- <UFO /> -->
     <Hero />
-
-    <form name='contact' action='post' data-netlify='true'>
-      <input type='text' name='name' />
-      <button type='submit'>submit</button>
-    </form>
-
+    <TestForm client:load />
     <Screentime client:visible />
 
     <div class='h-screen'></div>
