@@ -1,0 +1,112 @@
+<form
+  method='post'
+  data-netlify='true'
+  id='contact-form'
+  class='p-10 h-screen w-full md:w-[400px] bg-neutral-900 fixed left-0 top-0 z-50 duration-300 flex flex-col font-inter border-r border-gray-800 -translate-x-full'
+>
+  <svg
+    id='close-btn'
+    xmlns='http://www.w3.org/2000/svg'
+    viewBox='0 0 320 512'
+    class='w-4 absolute right-4 top-4'
+    ><path
+      d='M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z'
+      fill='white'></path>
+  </svg>
+  <span class='text-3xl font-bold tracking-tight text-cat-pink mb-10'
+    >Get in touch</span
+  >
+  <div class='flex flex-col space-y-8'>
+    <div class='relative z-0'>
+      <input
+        type='text'
+        id='name'
+        name='name'
+        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-cat-pink peer font-redhat'
+        placeholder=' '
+        required
+      />
+      <label
+        for='name'
+        class='absolute text-lg text-gray-400 duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-cat-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6'
+        >Name</label
+      >
+    </div>
+    <div class='relative z-0'>
+      <input
+        type='text'
+        id='company'
+        name='company'
+        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-cat-pink peer font-redhat'
+        placeholder=' '
+      />
+      <label
+        for='company'
+        class='absolute text-lg text-gray-400 duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-cat-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6'
+        >Company (optional)</label
+      >
+    </div>
+    <div class='relative z-0'>
+      <input
+        type='text'
+        id='contact-info'
+        name='contact-info'
+        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-cat-pink peer font-redhat'
+        placeholder=' '
+      />
+      <label
+        for='contact-info'
+        class='absolute text-lg text-gray-400 duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-cat-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6'
+        >Email or Phone number</label
+      >
+    </div>
+    <div class='relative z-0'>
+      <textarea
+        rows='8'
+        id='message'
+        name='message'
+        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-cat-pink peer font-redhat'
+        placeholder=' '></textarea>
+      <label
+        for='message'
+        class='absolute text-lg text-gray-400 duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-cat-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6'
+        >Message</label
+      >
+    </div>
+  </div>
+  <button
+    type='submit'
+    class='rounded-lg bg-cat-blue text-neutral-900 font-bold py-4 text-xl w-fit px-10 self-end duration-200 hover:ring-2 ring-cat-pink ring-offset-4 ring-offset-neutral-900 mt-10 md:mt-20 lg:mt-10'
+  >
+    Send it
+  </button>
+</form>
+
+<script>
+  import { settings } from '../stores/settings'
+
+  const form = document.getElementById('contact-form') as HTMLElement
+  const closeBtn = document.getElementById('close-btn') as HTMLElement
+
+  closeBtn.addEventListener('click', () =>
+    settings.setKey('showContactForm', false)
+  )
+
+  const handleOutsideClick = (e: Event) => {
+    if (!form.contains(e.target as Node))
+      settings.setKey('showContactForm', false)
+  }
+
+  settings.listen((v) => {
+    if (v.showContactForm) {
+      form.classList.remove('-translate-x-full')
+      setTimeout(
+        () => document.addEventListener('click', handleOutsideClick),
+        100
+      )
+    } else {
+      form.classList.add('-translate-x-full')
+      document.removeEventListener('click', handleOutsideClick)
+    }
+  })
+</script>

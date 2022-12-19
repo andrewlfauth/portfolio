@@ -14,7 +14,7 @@ function CustomCursor() {
       'border-nightowl-orange': cursorSettings.style === 'nightowl',
       'border-slate-700': cursorSettings.style === 'red',
     },
-    'fixed -left-4 top-0 -translate-x-1/2 -translate-y-1/2 z-50 w-8 h-8 border-2 rounded-full pointer-events-none'
+    'fixed -left-4 top-0 -translate-x-1/2 -translate-y-1/2 z-50 w-8 h-8 border-2 rounded-full pointer-events-none z-[100]'
   )
   const INNER_STYLES = clsx(
     {
@@ -25,7 +25,7 @@ function CustomCursor() {
       'bg-nightowl-blue': cursorSettings.style === 'nightowl',
       'bg-red-600': cursorSettings.style === 'red',
     },
-    'fixed -left-4 top-0 -translate-x-1/2 -translate-y-1/2 z-50 w-3 h-3 rounded-full pointer-events-none'
+    'fixed -left-4 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full pointer-events-none z-[100]'
   )
 
   const outerRef = useRef<HTMLDivElement>(null)

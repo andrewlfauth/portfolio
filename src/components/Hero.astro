@@ -23,6 +23,7 @@ import P from './P.astro'
 
     <div id='hero-btns' class='flex pt-4 mx-auto md:space-x-4 lg:mx-0 w-fit'>
       <button
+        id='contact-button'
         class='w-[156px] h-[52px] rounded-lg border-2 border-gray-800 text-nightowl-blue text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02]'
       >
         contact
@@ -63,5 +64,10 @@ import P from './P.astro'
         heroBtns.children[i].classList.remove('cursor-none')
       }
     }
+  })
+
+  heroBtns.children[0].addEventListener('click', () => {
+    let currentState = settings.get().showContactForm
+    settings.setKey('showContactForm', !currentState)
   })
 </script>
