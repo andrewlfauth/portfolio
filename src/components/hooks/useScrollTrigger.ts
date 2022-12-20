@@ -2,6 +2,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 export default function useScrollTrigger() {
-  gsap.registerPlugin(ScrollTrigger)
-  return gsap
+  const a = gsap
+  a.registerPlugin(ScrollTrigger)
+  return a
 }
