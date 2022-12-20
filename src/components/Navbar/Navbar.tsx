@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'preact/hooks'
+import { useEffect, useRef } from 'preact/hooks'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { settings } from '../../stores/settings'
 import CursorToggle from './CursorToggle'
 import github from '../../assets/github.svg'
 import linkedin from '../../assets/linkedin.svg'
@@ -10,6 +11,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 function Sidebar() {
   const btnsRef = useRef<HTMLLIElement>(null)
+
+  const openContactForm = () => settings.setKey('showContactForm', true)
 
   useEffect(() => {
     gsap.to(btnsRef.current, {
@@ -26,7 +29,10 @@ function Sidebar() {
       <ul className='flex fixed left-0 top-0 z-50 space-x-2 w-full p-2 md:p-4'>
         <CursorToggle />
         <li ref={btnsRef} className='flex space-x-2 opacity-0'>
-          <button class='h-10 w-20 md:w-[156px] md:h-[52px] rounded-lg border-2 border-primary text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-orange text-sm md:text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] bg-primary'>
+          <button
+            class='h-10 w-20 md:w-[156px] md:h-[52px] rounded-lg border-2 border-primary text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-orange text-sm md:text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] bg-primary'
+            onClick={openContactForm}
+          >
             contact
           </button>
           <button class='w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary items-center justify-center select-none hover:scale-[1.02] hidden md:flex bg-primary'>
