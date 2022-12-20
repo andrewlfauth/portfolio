@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from 'preact/hooks'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-
+// import { gsap } from 'gsap'
+// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { gsap, ScrollTrigger } from '../../utils/gsap'
 import ProjectLinks from '../ProjectLinks'
 import { Cloudinary, MongoDB, React, Remix, Tailwind } from '../TechCards'
 import About from './About'
 import Features from './Features'
 import ScreenShots from './ScreenShots'
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 
 function Screentime() {
   const [tab, setTab] = useState('screenshots')
