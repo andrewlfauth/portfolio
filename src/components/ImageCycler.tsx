@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from 'preact/hooks'
+import { useEffect, useState, useRef } from 'preact/hooks'
 
 function ImageCycler({
   images,

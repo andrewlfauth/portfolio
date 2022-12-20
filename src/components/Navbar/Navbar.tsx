@@ -1,29 +1,29 @@
 import { useEffect, useRef } from 'preact/hooks'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+// import { gsap } from 'gsap'
+// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { settings } from '../../stores/settings'
 import CursorToggle from './CursorToggle'
 import github from '../../assets/github.svg'
 import linkedin from '../../assets/linkedin.svg'
 import resume from '../../assets/resume.svg'
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 
 function Sidebar() {
   const btnsRef = useRef<HTMLLIElement>(null)
 
   const openContactForm = () => settings.setKey('showContactForm', true)
 
-  useEffect(() => {
-    gsap.to(btnsRef.current, {
-      scrollTrigger: {
-        trigger: btnsRef.current,
-        start: 'bottom -350',
-      },
-      opacity: 1,
-      pointerEvents: 'auto',
-    })
-  }, [])
+  // useEffect(() => {
+  //   gsap.to(btnsRef.current, {
+  //     scrollTrigger: {
+  //       trigger: btnsRef.current,
+  //       start: 'bottom -350',
+  //     },
+  //     opacity: 1,
+  //     pointerEvents: 'auto',
+  //   })
+  // }, [])
 
   return (
     <>
