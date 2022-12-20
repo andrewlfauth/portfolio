@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from 'preact/hooks'
+import { useEffect, useRef } from 'preact/hooks'
+import { gsap, ScrollTrigger } from '../../utils/gsap'
 import { settings } from '../../stores/settings'
 import CursorToggle from './CursorToggle'
 import github from '../../assets/github.svg'
 import linkedin from '../../assets/linkedin.svg'
 import resume from '../../assets/resume.svg'
-import useScrollTrigger from '../hooks/useScrollTrigger'
 
 function Sidebar() {
   const btnsRef = useRef<HTMLLIElement>(null)
-  const gsap = useScrollTrigger()
 
   const openContactForm = () => settings.setKey('showContactForm', true)
 
