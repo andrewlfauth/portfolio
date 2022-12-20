@@ -10,13 +10,13 @@ interface Props {
 function ProjectLinks() {
   return (
     <div className='flex space-x-4 text-xs md:text-base'>
-      <div className='flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 hover:border-nightowl-blue duration-100 border-gray-800'>
+      <div className='flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue duration-100 border-primary'>
         <Unlock />
         <span className='ml-2 md:ml-3 select-none text-gray-100'>
           Public Repo
         </span>
       </div>
-      <div className='flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 hover:border-nightowl-blue duration-100 border-gray-800'>
+      <div className='flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue duration-100 border-primary'>
         <Eye />
         <span className='ml-2 md:ml-3 select-none text-gray-100'>
           Live Site

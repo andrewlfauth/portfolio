@@ -51,7 +51,7 @@ function Screentime() {
   return (
     <div class='pt-60'>
       <div className='pb-6 md:pb-10'>
-        <h2 className='font-redhat text-4xl md:text-5xl text-white text-center pb-2'>
+        <h2 className='font-redhat text-4xl md:text-5xl text-title text-center pb-2'>
           Screen Time
         </h2>
         <div
@@ -62,8 +62,8 @@ function Screentime() {
             onClick={() => setTab('screenshots')}
             className={`${
               tab === 'screenshots'
-                ? 'text-nightowl-orange'
-                : 'text-nightowl-blue'
+                ? 'text-mat-red catppuccin:text-cat-green nightowl:text-nightowl-orange'
+                : 'text-gray-300 catppuccin:text-cat-overlay nightowl:text-nightowl-text'
             } cursor-pointer`}
           >
             Screenshots
@@ -71,7 +71,9 @@ function Screentime() {
           <span
             onClick={() => setTab('features')}
             className={`${
-              tab === 'features' ? 'text-nightowl-orange' : 'text-nightowl-blue'
+              tab === 'features'
+                ? 'text-mat-red catppuccin:text-cat-green nightowl:text-nightowl-orange'
+                : 'text-gray-300 catppuccin:text-cat-overlay nightowl:text-nightowl-text'
             } cursor-pointer`}
           >
             Features
@@ -79,7 +81,9 @@ function Screentime() {
           <span
             onClick={() => setTab('about')}
             className={`${
-              tab === 'about' ? 'text-nightowl-orange' : 'text-nightowl-blue'
+              tab === 'about'
+                ? 'text-mat-red catppuccin:text-cat-green nightowl:text-nightowl-orange'
+                : 'text-gray-300 catppuccin:text-cat-overlay nightowl:text-nightowl-text'
             } cursor-pointer`}
           >
             About

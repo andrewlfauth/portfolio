@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className='font-inter text-gray-400 text-sm md:text-lg leading-6 space-y-2 '>
+    <div className='font-inter text-type text-sm md:text-lg leading-6 space-y-2 '>
       <p>
         Screen Time is an app that helps parents find the television shows that
         fit their child's learning needs.

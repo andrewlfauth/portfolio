@@ -11,32 +11,31 @@ gsap.registerPlugin(ScrollTrigger)
 function Sidebar() {
   const btnsRef = useRef<HTMLLIElement>(null)
 
-  // useEffect(() => {
-  //   gsap.to(btnsRef.current, {
-  //     scrollTrigger: {
-  //       trigger: btnsRef.current,
-  //       markers: true,
-  //       start: 'bottom -350',
-  //     },
-  //     opacity: 1,
-  //   })
-  // }, [])
+  useEffect(() => {
+    gsap.to(btnsRef.current, {
+      scrollTrigger: {
+        trigger: btnsRef.current,
+        start: 'bottom -350',
+      },
+      opacity: 1,
+    })
+  }, [])
 
   return (
     <>
       <ul className='flex fixed left-0 top-0 z-50 space-x-2 w-full p-2 md:p-4'>
         <CursorToggle />
-        <li ref={btnsRef} className='flex space-x-2'>
-          <button class='h-10 w-20 md:w-[156px] md:h-[52px] rounded-lg border-2 border-gray-800 text-nightowl-blue text-sm md:text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] bg-neutral-900'>
+        <li ref={btnsRef} className='flex space-x-2 opacity-0'>
+          <button class='h-10 w-20 md:w-[156px] md:h-[52px] rounded-lg border-2 border-primary text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-orange text-sm md:text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] bg-primary'>
             contact
           </button>
-          <button class='w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-2 border-gray-800 items-center justify-center select-none hover:scale-[1.02] hidden md:flex bg-neutral-900'>
+          <button class='w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary items-center justify-center select-none hover:scale-[1.02] hidden md:flex bg-primary'>
             <img src={github} alt='github' class=' md:w-8' />
           </button>
-          <button class='w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-2 border-gray-800 hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-neutral-900'>
+          <button class='w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-primary'>
             <img src={linkedin} alt='github' class='md:w-8' />
           </button>
-          <button class='w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-2 border-gray-800 hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-neutral-900'>
+          <button class='w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-primary'>
             <img src={resume} alt='github' class='md:w-[28px]' />
           </button>
         </li>

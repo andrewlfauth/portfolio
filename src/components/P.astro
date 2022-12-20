@@ -5,10 +5,12 @@ import moon from '../assets/moon.jpg'
 
 <div class='scale-[.6] md:scale-[.7] lg:scale-[.8] mt-12md: mt-20 lg:-mt-4'>
   <div
+    id='planet'
     style={{ backgroundImage: 'url(' + planet + ')' }}
     class='planet bg-repeat-x'
   >
     <div
+      id='moon'
       style={{
         backgroundImage: 'url(' + moon + ')',
       }}
@@ -68,3 +70,24 @@ import moon from '../assets/moon.jpg'
     }
   }
 </style>
+
+<script>
+  import { settings } from '../stores/settings'
+  import matPlanet from '../assets/a.png'
+  import catPlanet from '../assets/p-cat-1.png'
+  import owlPlanet from '../assets/p-nightowl-1.png'
+
+  const planet = document.getElementById('planet') as HTMLElement
+
+  settings.listen((v) => {
+    if (v.cursor.style === 'default') {
+      planet.style.backgroundImage = `url(${matPlanet})`
+    }
+    if (v.cursor.style === 'catppuccin') {
+      planet.style.backgroundImage = `url(${catPlanet})`
+    }
+    if (v.cursor.style === 'nightowl') {
+      planet.style.backgroundImage = `url(${owlPlanet})`
+    }
+  })
+</script>

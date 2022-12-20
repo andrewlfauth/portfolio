@@ -50,7 +50,7 @@ interface Props {
 
 const TechCard = ({ src, label, imgClass, spanClass }: Props) => (
   <div
-    class='rounded-lg border-2 border-gray-800 flex items-center justify-between py-1 md:py-2 pr-4 w-fit mb-2 lg:mb-0'
+    class='rounded-lg border-2 border-primary flex items-center justify-between py-1 md:py-2 pr-4 w-fit mb-2 lg:mb-0'
     target='_blank'
     rel='noreferrer'
   >
@@ -60,7 +60,7 @@ const TechCard = ({ src, label, imgClass, spanClass }: Props) => (
       className={`${imgClass} max-w-[20px] max-h-[20px] lg:max-w-[30px] lg:max-h-[30px]`}
     />
     <span
-      className={`${spanClass} text-xs md:text-sm lg:text-lg font-semibold tracking-tight text-neutral-400 font-inter`}
+      className={`${spanClass} text-xs md:text-sm lg:text-lg font-semibold tracking-tight text-primary font-inter text-type`}
     >
       {label}
     </span>

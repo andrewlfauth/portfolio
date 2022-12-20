@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer utilities {
+  .bg-primary {
+    @apply bg-mat-bg catppuccin:bg-cat-bg nightowl:bg-nightowl-bg;
+  }
+
+  .text-title {
+    @apply text-gray-50 catppuccin:text-white nightowl:text-white;
+  }
+
+  .text-type {
+    @apply text-neutral-400 catppuccin:text-cat-text nightowl:text-nightowl-text;
+  }
+
+  .border-primary {
+    @apply border-gray-800 catppuccin:border-cat-border nightowl:border-nightowl-border;
+  }
+}

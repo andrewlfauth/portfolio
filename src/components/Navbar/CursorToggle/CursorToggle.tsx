@@ -1,13 +1,12 @@
-import { useState, useRef, useEffect } from 'preact/hooks'
+import { useState } from 'preact/hooks'
 import { settings } from '../../../stores/settings'
-import autoAnimate from '@formkit/auto-animate'
 import clsx from 'clsx'
 import cursorStyles from './cursorStyles'
 import useDropdown from '../../hooks/useDropdown'
 
 function CursorToggle() {
-  const { expand, setExpand, parentRef } = useDropdown()
   const [activeCursorIdx, setActiveCursorIdx] = useState(0)
+  const { expand, setExpand, parentRef } = useDropdown()
 
   const changeCursor = (value: { custom: boolean; style: string }) => {
     settings.setKey('cursor', value)
@@ -19,10 +18,7 @@ function CursorToggle() {
   )
 
   return (
-    <li
-      ref={parentRef}
-      class='border-2 border-gray-800 rounded-lg bg-neutral-900'
-    >
+    <li ref={parentRef} class='border-2 border-primary rounded-lg bg-primary'>
       <CursorButton
         onClick={
           expand
@@ -45,7 +41,7 @@ function CursorToggle() {
                 changeCursor(cursor.state)
                 setActiveCursorIdx(cursor.id)
               }}
-              isXBtn={!cursor.state.style}
+              isXBtn={cursor.state.style === 'none'}
             />
           ))}
     </li>
