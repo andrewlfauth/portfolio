@@ -7,23 +7,17 @@ function CustomCursor() {
   const cursorSettings = useStore(settings).cursor
   const OUTER_STYLES = clsx(
     {
-      'border-neutral-700': cursorSettings.style === 'default',
-      'border-mat-purple': cursorSettings.style === 'material',
+      'border-mat-red': cursorSettings.style === 'default',
       'border-cat-blue': cursorSettings.style === 'catppuccin',
-      'border-cobalt-blue': cursorSettings.style === 'cobalt',
       'border-nightowl-orange': cursorSettings.style === 'nightowl',
-      'border-slate-700': cursorSettings.style === 'red',
     },
     'fixed -left-4 top-0 -translate-x-1/2 -translate-y-1/2 z-50 w-8 h-8 border-2 rounded-full pointer-events-none z-[100]'
   )
   const INNER_STYLES = clsx(
     {
-      'bg-gray-300': cursorSettings.style === 'default',
-      'bg-mat-green': cursorSettings.style === 'material',
+      'bg-mat-blue': cursorSettings.style === 'default',
       'bg-cat-pink': cursorSettings.style === 'catppuccin',
-      'bg-cobalt-yellow': cursorSettings.style === 'cobalt',
       'bg-nightowl-blue': cursorSettings.style === 'nightowl',
-      'bg-red-600': cursorSettings.style === 'red',
     },
     'fixed -left-4 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full pointer-events-none z-[100]'
   )
@@ -79,8 +73,8 @@ function CustomCursor() {
     <div className={`${cursorSettings.custom ? '' : 'hidden'}`}>
       <div
         ref={innerRef}
-        style={{ transition: 'width .2s, height .2s' }}
         className={INNER_STYLES}
+        style={{ transition: 'width .2s, height .2s' }}
       ></div>
       <div
         ref={outerRef}
