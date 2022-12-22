@@ -70,7 +70,7 @@ function CustomCursor() {
   }, [cursorSettings])
 
   return (
-    <div className={`${cursorSettings.custom ? '' : 'hidden'}`}>
+    <div className={`${cursorSettings.custom ? 'hidden lg:block' : 'hidden'}`}>
       <div
         ref={innerRef}
         className={INNER_STYLES}

@@ -18,7 +18,7 @@ function CursorToggle() {
   )
 
   return (
-    <li ref={parentRef} class='border-2 border-primary rounded-lg bg-primary'>
+    <div ref={parentRef} class='border-2 border-primary rounded-lg bg-primary'>
       <CursorButton
         onClick={
           expand
@@ -44,7 +44,7 @@ function CursorToggle() {
               isXBtn={cursor.state.style === 'none'}
             />
           ))}
-    </li>
+    </div>
   )
 }
 

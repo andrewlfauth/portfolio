@@ -1,13 +1,14 @@
 import { useEffect, useRef } from 'preact/hooks'
-import { gsap, ScrollTrigger } from '../../utils/gsap'
+import { gsap } from '../../utils/gsap'
 import { settings } from '../../stores/settings'
 import CursorToggle from './CursorToggle'
 import github from '../../assets/github.svg'
 import linkedin from '../../assets/linkedin.svg'
 import resume from '../../assets/resume.svg'
+import Nav from './Nav'
 
 function Sidebar() {
-  const btnsRef = useRef<HTMLLIElement>(null)
+  const btnsRef = useRef<HTMLDivElement>(null)
 
   const openContactForm = () => settings.setKey('showContactForm', true)
 
@@ -25,9 +26,9 @@ function Sidebar() {
 
   return (
     <>
-      <ul className='flex fixed left-0 top-0 z-50 space-x-2 w-full p-2 md:p-4'>
+      <div className='flex fixed left-0 top-0 z-50 space-x-2 p-2 md:p-4'>
         <CursorToggle />
-        <li
+        <div
           ref={btnsRef}
           className='flex space-x-2 opacity-0 pointer-events-none'
         >
@@ -46,8 +47,9 @@ function Sidebar() {
           <button class='w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-primary'>
             <img src={resume} alt='github' class='md:w-[28px]' />
           </button>
-        </li>
-      </ul>
+        </div>
+      </div>
+      <Nav />
     </>
   )
 }

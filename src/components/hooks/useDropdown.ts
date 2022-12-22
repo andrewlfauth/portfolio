@@ -3,7 +3,7 @@ import autoAnimate from '@formkit/auto-animate'
 
 export default function useDropdown() {
   const [expand, setExpand] = useState(false)
-  const parentRef = useRef<HTMLLIElement>(null)
+  const parentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     parentRef.current &&

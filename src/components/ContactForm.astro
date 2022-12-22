@@ -1,3 +1,8 @@
+---
+import InputField from './Menu/InputField.astro'
+import MenuButton from './Menu/MenuButton'
+---
+
 <form
   method='post'
   data-netlify='true'
@@ -6,80 +11,39 @@
 >
   <svg
     id='close-btn'
+    class='absolute top-4 right-4 fill-mat-red catppuccin:fill-cat-pink nightowl:fill-nightowl-orange w-6 hover:scale-110 duration-100'
     xmlns='http://www.w3.org/2000/svg'
-    viewBox='0 0 320 512'
-    class='w-4 absolute right-4 top-4'
-    d='M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z'
-    ><path fill='white'></path>
+    viewBox='0 0 512 512'
+  >
+    <path
+      d='M175 175C184.4 165.7 199.6 165.7 208.1 175L255.1 222.1L303 175C312.4 165.7 327.6 165.7 336.1 175C346.3 184.4 346.3 199.6 336.1 208.1L289.9 255.1L336.1 303C346.3 312.4 346.3 327.6 336.1 336.1C327.6 346.3 312.4 346.3 303 336.1L255.1 289.9L208.1 336.1C199.6 346.3 184.4 346.3 175 336.1C165.7 327.6 165.7 312.4 175 303L222.1 255.1L175 208.1C165.7 199.6 165.7 184.4 175 175V175zM0 96C0 60.65 28.65 32 64 32H448C483.3 32 512 60.65 512 96V416C512 451.3 483.3 480 448 480H64C28.65 480 0 451.3 0 416V96zM48 96V416C48 424.8 55.16 432 64 432H448C456.8 432 464 424.8 464 416V96C464 87.16 456.8 80 448 80H64C55.16 80 48 87.16 48 96z'
+    ></path>
   </svg>
   <span
     class='text-3xl font-bold tracking-tight text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-blue mb-10'
     >Get in touch</span
   >
-  <div class='flex flex-col space-y-8'>
-    <div class='relative z-0'>
-      <input
-        type='text'
-        id='name'
-        name='name'
-        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-mat-red catppuccin:focus:border-cat-pink nightowl:focus:border-nightowl-blue peer font-redhat'
-        placeholder=' '
-        required
-      />
-      <label
-        for='name'
-        class='absolute text-lg text-type duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-mat-red catppuccin:peer-focus:text-cat-pink nightowl:peer-focus:text-nightowl-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6'
-        >Name</label
-      >
-    </div>
-    <div class='relative z-0'>
-      <input
-        type='text'
-        id='company'
-        name='company'
-        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-mat-red catppuccin:focus:border-cat-pink nightowl:focus:border-nightowl-blue peer font-redhat'
-        placeholder=' '
-      />
-      <label
-        for='company'
-        class='absolute text-lg text-type duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-mat-red catppuccin:peer-focus:text-cat-pink nightowl:peer-focus:text-nightowl-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6'
-        >Company (optional)</label
-      >
-    </div>
-    <div class='relative z-0'>
-      <input
-        type='text'
-        id='contact-info'
-        name='contact-info'
-        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-mat-red catppuccin:focus:border-cat-pink nightowl:focus:border-nightowl-blue peer font-redhat'
-        placeholder=' '
-      />
-      <label
-        for='contact-info'
-        class='absolute text-lg text-type duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-mat-red catppuccin:peer-focus:text-cat-pink nightowl:peer-focus:text-nightowl-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6'
-        >Email or Phone number</label
-      >
-    </div>
-    <div class='relative z-0'>
-      <textarea
-        rows='8'
-        id='message'
-        name='message'
-        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-mat-red catppuccin:focus:border-cat-pink nightowl:focus:border-nightowl-blue peer font-redhat'
-        placeholder=' '></textarea>
-      <label
-        for='message'
-        class='absolute text-lg text-type duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-mat-red catppuccin:peer-focus:text-cat-pink nightowl:peer-focus:text-nightowl-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6'
-        >Message</label
-      >
-    </div>
+  <div class='flex flex-col space-y-8 mb-10 md:mb-20 lg:mb-10'>
+    <InputField name='name' required={true} label='Name' />
+    <InputField name='company' required={false} label='Company (optional)' />
+    <InputField
+      name='contact-info'
+      required={true}
+      label='Email or Phone Number'
+    />
+    <InputField
+      name='message'
+      required={true}
+      label='Message'
+      textarea={{ rows: 8 }}
+    />
   </div>
-  <button
+  <MenuButton
+    client:load
     type='submit'
-    class='rounded-lg bg-mat-red catppuccin:bg-cat-pink nightowl:bg-nightowl-orange text-neutral-900 catppuccin:text-cat-bg nightowl:text-nightowl-bg font-bold py-4 text-xl w-fit px-10 self-end duration-200 hover:ring-2 ring-mat-red catppuccin:ring-cat-pink nightowl:ring-nightowl-orange ring-offset-4 ring-offset-neutral-900 catppuccin:ring-offset-cat-bg nightowl:ring-offset-nightowl-bg mt-10 md:mt-20 lg:mt-10'
-  >
-    Send it
-  </button>
+    text='Send it'
+    className='self-end duration-200 hover:ring-2 nightowl:hover:ring catppuccin:hover:ring ring-mat-red catppuccin:ring-cat-bg nightowl:ring-nightowl-bg ring-offset-4 ring-offset-neutral-900 catppuccin:ring-offset-cat-border nightowl:ring-offset-nightowl-border'
+  />
 </form>
 
 <script>

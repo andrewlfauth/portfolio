@@ -2,6 +2,18 @@
 @tailwind utilities;
 @tailwind components;
 
+@layer components {
+  .hamburger-open {
+    transform: rotate(-180deg);
+  }
+  .hamburger-open > span:nth-child(1) {
+    transform: rotate(-45deg) scaleX(0.75) translate(-8px, -3px);
+  }
+  .hamburger-open > span:nth-child(3) {
+    transform: rotate(45deg) scaleX(0.75) translate(-9px, 2px);
+  }
+}
+
 @layer utilities {
   .bg-primary {
     @apply bg-mat-bg catppuccin:bg-cat-bg nightowl:bg-nightowl-bg;
