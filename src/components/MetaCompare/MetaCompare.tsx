@@ -1,23 +1,23 @@
-import { useEffect, useRef } from 'preact/hooks'
-import { gsap } from '../../utils/gsap'
+import { useRef, useEffect } from 'preact/hooks'
 import useProjectTabs from '../hooks/useProjectTabs'
 import ProjectLinks from '../Projects/ProjectLinks'
+import { gsap } from '../../utils/gsap'
 import Tabs from '../Projects/Tabs'
 import {
-  Cloudinary,
-  MongoDB,
+  Cheerio,
+  Jotai,
   React,
-  Remix,
   Tailwind,
+  Typescript,
 } from '../Projects/TechCards'
 import About from './About'
 import Features from './Features'
 import ScreenShots from './ScreenShots'
 
-function Screentime() {
+function MetaCompare() {
   const { tab, setTab, tabsRef } = useProjectTabs()
-  const cardsRef = useRef<HTMLDivElement>(null)
   const linksRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -55,29 +55,27 @@ function Screentime() {
     <div class='pt-60'>
       <div className='pb-6 md:pb-10'>
         <h2 className='font-redhat text-4xl md:text-5xl text-title text-center pb-2'>
-          Screen Time
+          Meta Compare
         </h2>
         <Tabs tabsRef={tabsRef} tab={tab} setTab={setTab} />
       </div>
       <div
         ref={linksRef}
-        className='mx-auto w-fit mb-4 lg:translate-x-[-106px]'
+        className='mx-auto w-fit mb-4 lg:translate-x-[-178px]'
       >
-        <ProjectLinks
-          repo={{ href: 'https://github.com/andrewlfauth/screen-time' }}
-          site={{ href: 'https://screen-time.vercel.app' }}
-        />
+        <ProjectLinks />
       </div>
+
       <div class='flex flex-col lg:flex-row lg:space-x-4 w-fit mx-auto'>
         <div
           ref={cardsRef}
           className='hidden lg:flex items-end flex-col space-y-2'
         >
-          <MongoDB />
-          <Remix />
-          <Tailwind />
           <React />
-          <Cloudinary />
+          <Typescript />
+          <Jotai />
+          <Tailwind />
+          <Cheerio />
         </div>
         <div
           ref={contentRef}
@@ -88,15 +86,15 @@ function Screentime() {
           {tab === 'about' && <About />}
         </div>
         <div className='flex flex-wrap space-x-2 mt-4 justify-center lg:hidden max-w-[496.5px] mx-4 md:mx-0'>
-          <MongoDB />
-          <Remix />
-          <Tailwind />
           <React />
-          <Cloudinary />
+          <Typescript />
+          <Jotai />
+          <Tailwind />
+          <Cheerio />
         </div>
       </div>
     </div>
   )
 }
 
-export default Screentime
+export default MetaCompare

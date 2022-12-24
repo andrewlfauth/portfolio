@@ -1,4 +1,4 @@
-import ImageCycler from '../ImageCycler'
+import ImageCycler from '../Projects/ImageCycler'
 
 function ScreenShots() {
   let mobile = [

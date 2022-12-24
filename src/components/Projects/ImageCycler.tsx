@@ -5,7 +5,7 @@ function ImageCycler({
   className,
 }: {
   images: { src: string; alt: string }[]
-  className: string
+  className?: string
 }) {
   const [imgIdx, setImgIdx] = useState(0)
   const imgRef = useRef<HTMLImageElement>(null)

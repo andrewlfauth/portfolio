@@ -27,7 +27,7 @@ export const React = () => (
   <TechCard
     src='https://res.cloudinary.com/dpnkrz8c8/image/upload/v1670966034/portfolio/jbuisrchxi4soxwzoy2p.svg'
     label='React'
-    spanClass='ml-3'
+    spanClass='ml-2'
     imgClass='scale-[.8] ml-1'
   />
 )
@@ -41,8 +41,28 @@ export const Cloudinary = () => (
   />
 )
 
+export const Cheerio = () => <TechCard label='Cheerio' spanClass='ml-3' />
+
+export const Jotai = () => (
+  <TechCard
+    src='https://res.cloudinary.com/dpnkrz8c8/image/upload/v1671771262/portfolio/mtxf74hant87wk57equu.png'
+    label='Jotai'
+    spanClass='ml-2'
+    imgClass='ml-2 scale-[.9]'
+  />
+)
+
+export const Typescript = () => (
+  <TechCard
+    src='https://res.cloudinary.com/dpnkrz8c8/image/upload/v1671771784/portfolio/d82zf4sffvgltwatui71.png'
+    label='Typescript'
+    spanClass='ml-3'
+    imgClass='ml-2 scale-[.9]'
+  />
+)
+
 interface Props {
-  src: string
+  src?: string
   label: string
   imgClass?: string
   spanClass?: string
@@ -54,11 +74,13 @@ const TechCard = ({ src, label, imgClass, spanClass }: Props) => (
     target='_blank'
     rel='noreferrer'
   >
-    <img
-      src={src}
-      alt=''
-      className={`${imgClass} max-w-[20px] max-h-[20px] lg:max-w-[30px] lg:max-h-[30px]`}
-    />
+    {src && (
+      <img
+        src={src}
+        alt=''
+        className={`${imgClass} max-w-[20px] max-h-[20px] lg:max-w-[30px] lg:max-h-[30px]`}
+      />
+    )}
     <span
       className={`${spanClass} text-xs md:text-sm lg:text-lg font-semibold tracking-tight text-primary font-inter text-type`}
     >

@@ -5,6 +5,7 @@ import Sparks from '../components/Sparks.astro'
 import Hero from '../components/Hero.astro'
 import UFO from '../components/UFO.astro'
 import Screentime from '../components/Screentime'
+import MetaCompare from '../components/MetaCompare'
 ---
 
 <Layout title='Welcome to Astro.'>
@@ -14,7 +15,7 @@ import Screentime from '../components/Screentime'
     <Hero />
 
     <Screentime client:visible />
-
+    <MetaCompare client:visible />
     <div class='h-screen'></div>
     <div class='h-screen'></div>
   </main>

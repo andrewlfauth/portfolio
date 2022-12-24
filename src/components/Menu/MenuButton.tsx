@@ -18,7 +18,7 @@ function MenuButton({
   return (
     <button
       type={type}
-      onClick={onClick ? onClick : ''}
+      onClick={onClick ? onClick : null}
       className={`${className} w-[156px] h-[52px] font-semibold rounded-lg border-2 border-mat-red catppuccin:border-cat-bg nightowl:border-nightowl-bg bg-mat-red catppuccin:bg-cat-bg nightowl:bg-nightowl-bg text-2xl font-redhat flex items-center justify-center select-none text-neutral-900 catppuccin:text-cat-pink nightowl:text-nightowl-orange`}
     >
       {text}

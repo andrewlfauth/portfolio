@@ -12,6 +12,31 @@
   .hamburger-open > span:nth-child(3) {
     transform: rotate(45deg) scaleX(0.75) translate(-9px, 2px);
   }
+
+  #sparks span {
+    background-color: #56b5c29c;
+    box-shadow: 0 0 0 10px #032e3844, 0 0 30px #0e6c81, 0 0 100px #0b3a77;
+  }
+  #sparks span:nth-child(even) {
+    background-color: #cf63e79d;
+    box-shadow: 0 0 0 10px #57082344, 0 0 50px #8f1385, 0 0 100px #700a74;
+  }
+  .catppuccin #sparks span {
+    background-color: #8aadf496;
+    box-shadow: 0 0 0 10px #032e3844, 0 0 30px #0e6c81, 0 0 100px #0b3a77;
+  }
+  .catppuccin #sparks span:nth-child(even) {
+    background-color: #f5bde656;
+    box-shadow: 0 0 0 10px #57082344, 0 0 50px #8f1385, 0 0 100px #700a74;
+  }
+  .nightowl #sparks span {
+    background-color: #82aaff8c;
+    box-shadow: 0 0 0 10px #032e3844, 0 0 30px #0e6c81, 0 0 100px #0b3a77;
+  }
+  .nightowl #sparks span:nth-child(even) {
+    background-color: #f78c6c;
+    box-shadow: 0 0 0 10px #57082344, 0 0 50px #8f1385, 0 0 100px #700a74;
+  }
 }
 
 @layer utilities {

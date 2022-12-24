@@ -1,27 +1,56 @@
 interface Props {
-  repo: {
-    href?: string
+  repo?: {
+    href: string
   }
   site?: {
     href: string
   }
 }
 
-function ProjectLinks() {
+function ProjectLinks({ repo, site }: Props) {
   return (
     <div className='flex space-x-4 text-xs md:text-base'>
-      <div className='flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue duration-100 border-primary'>
-        <Unlock />
-        <span className='ml-2 md:ml-3 select-none text-gray-100'>
-          Public Repo
-        </span>
+      <div
+        className={`${
+          repo
+            ? 'hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue'
+            : ''
+        } flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 duration-100 border-primary`}
+      >
+        {repo ? (
+          <>
+            <Unlock />
+            <a
+              href={repo.href}
+              target='_blank'
+              rel='noreferrer'
+              className='ml-2 md:ml-3 select-none text-gray-100'
+            >
+              Public Repo
+            </a>
+          </>
+        ) : (
+          <>
+            <Lock />
+            <span className='ml-2 md:ml-3 select-none text-gray-100'>
+              Private Repo
+            </span>
+          </>
+        )}
       </div>
-      <div className='flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue duration-100 border-primary'>
-        <Eye />
-        <span className='ml-2 md:ml-3 select-none text-gray-100'>
-          Live Site
-        </span>
-      </div>
+      {site && (
+        <div className='flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue duration-100 border-primary'>
+          <Eye />
+          <a
+            href={site.href}
+            target='_blank'
+            rel='noreferrer'
+            className='ml-2 md:ml-3 select-none text-gray-100'
+          >
+            Live Site
+          </a>
+        </div>
+      )}
     </div>
   )
 }
