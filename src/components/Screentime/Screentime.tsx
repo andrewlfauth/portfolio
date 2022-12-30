@@ -81,7 +81,7 @@ function Screentime() {
         </div>
         <div
           ref={contentRef}
-          class='min-h-[285px] lg:w-[697px] md:h-[400px] px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'
+          class='min-h-[285px] lg:w-[697px]  px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'
         >
           {tab === 'screenshots' && <ScreenShots />}
           {tab === 'features' && <Features />}
