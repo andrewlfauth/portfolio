@@ -59,7 +59,7 @@ export default ProjectLinks
 
 const Lock = () => (
   <svg
-    className='scale:scale-[.6] md:scale-[.9] -mt-[2px]'
+    className='scale-[.65] md:scale-[.9] -mt-[2px]'
     width='16'
     height='21'
     viewBox='0 0 16 21'
@@ -75,7 +75,7 @@ const Lock = () => (
 
 const Unlock = () => (
   <svg
-    className='scale-[.6] md:scale-[.9] -mt-[2px]'
+    className='scale-[.65] md:scale-[.9] -mt-[2px]'
     width='16'
     height='21'
     viewBox='0 0 16 21'
