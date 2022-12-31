@@ -1,5 +1,5 @@
 ---
-import planet from '../assets/a.png'
+import planet from '../assets/p-mat-1.png'
 import moon from '../assets/moon.jpg'
 ---
 
@@ -75,9 +75,19 @@ import moon from '../assets/moon.jpg'
 
 <script>
   import { settings } from '../stores/settings'
-  import matPlanet from '../assets/a.png'
+  import matPlanet from '../assets/p-mat-1.png'
   import catPlanet from '../assets/p-cat-1.png'
   import owlPlanet from '../assets/p-nightowl-1.png'
+
+  const planets = [matPlanet, catPlanet, owlPlanet]
+
+  Promise.all(planets.map(src => {
+    return new Promise((res) => {
+      let img = new Image()
+      img.src = src
+      img.onload = res
+    })
+  }))
 
   const planet = document.getElementById('planet') as HTMLElement
 
