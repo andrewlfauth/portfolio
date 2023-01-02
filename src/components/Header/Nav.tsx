@@ -24,6 +24,13 @@ function Nav() {
       </ul>
 
       <button
+        style='-webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;'
         className={`${
           openMenu ? 'hamburger-open' : 'hamburger'
         } space-y-[.4rem] absolute top-5 md:top-7 right-6 flex flex-col items-end duration-500 z-[70] lg:hidden`}

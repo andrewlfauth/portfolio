@@ -21,25 +21,28 @@ import P from './P.astro'
       Passionate web developer with a full-stack skillset.
     </p>
 
-    <div id='hero-btns' class='flex pt-4 mx-auto md:space-x-4 lg:mx-0 w-fit'>
+    <div
+      id='hero-btns'
+      class='flex items-center pt-4 mx-auto space-x-4 lg:mx-0 w-fit'
+    >
       <button
         id='contact-button'
-        class='w-[156px] h-[52px] rounded-lg border-2 border-primary text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-orange'
+        class='w-[100px] h-[44px] md:w-[156px] md:h-[52px] rounded-lg border-2 border-primary md:text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-orange'
       >
         contact
       </button>
       <button
-        class='w-[52px] h-[52px] rounded-lg border-primary flex items-center justify-center select-none hover:scale-[1.02] mx-2'
+        class='w-6 h-6 md:w-[52px] md:h-[52px] rounded-lg border-primary flex items-center justify-center select-none hover:scale-[1.02] mx-2'
       >
         <img src={github} alt='github' class='w-8' />
       </button>
       <button
-        class='w-[52px] h-[52px] rounded-lg border-primary flex items-center justify-center select-none hover:scale-[1.02] mr-2'
+        class='w-6 h-6 md:w-[52px] md:h-[52px] rounded-lg border-primary flex items-center justify-center select-none hover:scale-[1.02] mr-2'
       >
         <img src={linkedin} alt='linkedin' class='w-8' />
       </button>
       <button
-        class='w-[52px] h-[52px] rounded-lg border-primary flex items-center justify-center select-none hover:scale-[1.02]'
+        class='w-6 h-6 md:w-[52px] md:h-[52px] rounded-lg border-primary flex items-center justify-center select-none hover:scale-[1.02]'
       >
         <img src={resume} alt='resume' class='w-[28px]' />
       </button>

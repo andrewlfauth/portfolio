@@ -9,47 +9,29 @@ interface Props {
 
 function ProjectLinks({ repo, site }: Props) {
   return (
-    <div className='flex space-x-4 text-xs md:text-base'>
-      <div
-        className={`${
-          repo
-            ? 'hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue'
-            : ''
-        } flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 duration-100 border-primary`}
-      >
-        {repo ? (
-          <>
-            <Unlock />
-            <a
-              href={repo.href}
-              target='_blank'
-              rel='noreferrer'
-              className='ml-2 md:ml-3 select-none text-gray-100'
-            >
-              Public Repo
-            </a>
-          </>
-        ) : (
-          <>
-            <Lock />
-            <span className='ml-2 md:ml-3 select-none text-gray-100'>
-              Private Repo
-            </span>
-          </>
-        )}
-      </div>
-      {site && (
-        <div className='flex font-inter rounded-full w-fit items-center pl-2 pr-3 md:pl-3 md:pr-4 py-[1px] md:py-1 border-2 hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue duration-100 border-primary'>
-          <Eye />
-          <a
-            href={site.href}
-            target='_blank'
-            rel='noreferrer'
-            className='ml-2 md:ml-3 select-none text-gray-100'
-          >
-            Live Site
-          </a>
+    <div className='flex space-x-4 text-xs md:text-base font-inter'>
+      {repo ? (
+        <a
+          href={repo.href}
+          className='flex border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
+        >
+          <Unlock />
+          <span className='ml-2 text-sm md:text-base'>Public Repo</span>
+        </a>
+      ) : (
+        <div className='flex border-2 border-primary rounded-full pr-3 pl-3 py-1 items-center text-gray-100'>
+          <Lock />
+          <span className='ml-2 text-sm md:text-base'>Private Repo</span>
         </div>
+      )}
+      {site && (
+        <a
+          href={site.href}
+          className='flex border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
+        >
+          <Eye />
+          <span className='ml-2 text-sm md:text-base'>Live Site</span>
+        </a>
       )}
     </div>
   )
@@ -57,9 +39,13 @@ function ProjectLinks({ repo, site }: Props) {
 
 export default ProjectLinks
 
+const Link = ({ href }: { href?: string }) => {
+  return href ? <a href={href}>{}</a> : <div></div>
+}
+
 const Lock = () => (
   <svg
-    className='scale-[.65] md:scale-[.9] -mt-[2px]'
+    className='scale-[.7] md:scale-[.9] md:-mt-[2px]'
     width='16'
     height='21'
     viewBox='0 0 16 21'
@@ -75,7 +61,7 @@ const Lock = () => (
 
 const Unlock = () => (
   <svg
-    className='scale-[.65] md:scale-[.9] -mt-[2px]'
+    className='scale-[.7] md:scale-[.9] md:-mt-[2px]'
     width='16'
     height='21'
     viewBox='0 0 16 21'

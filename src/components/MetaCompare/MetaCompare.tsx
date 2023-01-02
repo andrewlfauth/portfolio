@@ -81,7 +81,13 @@ function MetaCompare() {
           ref={contentRef}
           class='min-h-[285px] lg:w-[697px] md:h-[400px] px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'
         >
-          {tab === 'screenshots' && <ScreenShots />}
+          {/* {tab === 'screenshots' && <ScreenShots />} */}
+          <video width={320} height={240} controls>
+            <source
+              src='https://res.cloudinary.com/dpnkrz8c8/video/upload/v1672546687/portfolio/b5h5xpxap3hfnn3gewqw.webm'
+              type='video/webm'
+            />
+          </video>
           {tab === 'features' && <Features />}
           {tab === 'about' && <About />}
         </div>
