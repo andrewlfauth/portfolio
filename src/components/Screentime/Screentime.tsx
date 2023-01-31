@@ -1,6 +1,8 @@
-import { useEffect, useRef } from 'preact/hooks'
+import { useEffect, useRef, useMemo } from 'preact/hooks'
 import { gsap } from '../../utils/gsap'
 import useProjectTabs from '../hooks/useProjectTabs'
+import About from '../Projects/About'
+import Features from '../Projects/Features'
 import ProjectLinks from '../Projects/ProjectLinks'
 import Tabs from '../Projects/Tabs'
 import {
@@ -10,8 +12,6 @@ import {
   Remix,
   Tailwind,
 } from '../Projects/TechCards'
-import About from './About'
-import Features from './Features'
 import ScreenShots from './ScreenShots'
 
 function Screentime() {
@@ -19,6 +19,30 @@ function Screentime() {
   const cardsRef = useRef<HTMLDivElement>(null)
   const linksRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+
+  const features = useMemo(
+    () => [
+      'User authentication',
+      'Searchable database of 25+ children shows',
+      'Title, description, teaching focus, and age range fields',
+      'Like and save shows',
+      "Matches users with shows that fit their child's learning goals",
+      'Save groups of shows in a "plan"',
+      'View plans created by other users with "Featured Plans"',
+    ],
+    []
+  )
+
+  const about = useMemo(
+    () => [
+      "Screen Time is an app that helps parents find the television shows that fit their child's learning needs.",
+      "Having a 4 year old in the house, I have watched my fair share of children's TV shows. I've noticed that each show has a few specific learning focuses that they aim to teach the viewer. For instance, my son's favorite show Wild Kratts teaches children about animals, nature, and making predictions.",
+      "Screen Time help's parents discover shows that teach their children what they want them to learn.",
+      '  Search for shows by age range or teaching focus, create a plan for your child, and track of the shows they respond to.',
+      '',
+    ],
+    []
+  )
 
   useEffect(() => {
     gsap.from([contentRef.current, linksRef.current], {
@@ -84,8 +108,8 @@ function Screentime() {
           class='min-h-[285px] lg:w-[697px]  px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'
         >
           {tab === 'screenshots' && <ScreenShots />}
-          {tab === 'features' && <Features />}
-          {tab === 'about' && <About />}
+          {tab === 'features' && <Features features={features} />}
+          {tab === 'about' && <About paragraphs={about} />}
         </div>
         <div className='flex flex-wrap space-x-2 mt-4 justify-center lg:hidden max-w-[496.5px] mx-4 md:mx-0'>
           <MongoDB />
