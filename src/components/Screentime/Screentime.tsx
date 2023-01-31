@@ -64,8 +64,8 @@ function Screentime() {
         className='mx-auto w-fit mb-4 lg:translate-x-[-106px]'
       >
         <ProjectLinks
-          repo={{ href: 'https://github.com/andrewlfauth/screen-time' }}
-          site={{ href: 'https://screen-time.vercel.app' }}
+          repo='https://github.com/andrewlfauth/screen-time'
+          site='https://screen-time.vercel.app'
         />
       </div>
       <div class='flex flex-col lg:flex-row lg:space-x-4 w-fit mx-auto'>
