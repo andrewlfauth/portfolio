@@ -4,6 +4,7 @@ import moon from '../assets/moon.jpg'
 ---
 
 <div
+  id="planet-container"
   class='scale-[.6] md:scale-[.7] lg:scale-[.7] xl:scale-[.8] mt-20 lg:-mt-4'
 >
   <div
@@ -78,6 +79,26 @@ import moon from '../assets/moon.jpg'
   import matPlanet from '../assets/p-mat-1.png'
   import catPlanet from '../assets/p-cat-1.png'
   import owlPlanet from '../assets/p-nightowl-1.png'
+  import {gsap} from '../utils/gsap'
+ 
+const tl = gsap.timeline()
+
+  tl.to("#planet-container", {
+  scrollTrigger: {
+    scrub: true
+  }, 
+  y: 1000,
+  ease: "none"
+})
+  tl.to("#planet-container", {
+  scrollTrigger: {
+    trigger: '#planet-container',
+    scrub: 1,
+    start: 'bottom 05%'
+  }, 
+  opacity: 0,
+  ease: "none"
+})
 
   const planets = [matPlanet, catPlanet, owlPlanet]
 
