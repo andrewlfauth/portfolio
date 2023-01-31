@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'preact/hooks'
+import { useRef, useEffect, useMemo } from 'preact/hooks'
 import useProjectTabs from '../hooks/useProjectTabs'
 import ProjectLinks from '../Projects/ProjectLinks'
 import { gsap } from '../../utils/gsap'
@@ -10,15 +10,38 @@ import {
   Tailwind,
   Typescript,
 } from '../Projects/TechCards'
-import About from './About'
-import Features from './Features'
 import ScreenShots from './ScreenShots'
+import Features from '../Projects/Features'
+import About from '../Projects/About'
 
 function MetaCompare() {
   const { tab, setTab, tabsRef } = useProjectTabs()
   const linksRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+
+  const features = useMemo(
+    () => [
+      'Scrape and persist website data',
+      "Infers a page's target and semantic keywords",
+      'Keyword highlighting and usage statistics',
+      'Heading, Img, Meta, and Anchor tag tables',
+      'Search bar with autocomplete, autosuggest, and multiple filters',
+      'Print and CSV download for tables',
+      'Improvement suggestion and issue detection algorithims for tag content',
+      'Social sharing preview for scraped pages',
+      'Slideshow of relevant page images',
+      'Dark mode',
+    ],
+    []
+  )
+
+  const about = useMemo(
+    () => [
+      'Seo tools can be very expensive, especially for someone just starting out in SEO. Not to mention, it is nearly impossible for these tools to predict thigns with 100% accuracy... yadyydada',
+    ],
+    []
+  )
 
   useEffect(() => {
     gsap.from([contentRef.current, linksRef.current], {
@@ -81,15 +104,16 @@ function MetaCompare() {
           ref={contentRef}
           class='min-h-[285px] lg:w-[697px] md:h-[400px] px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'
         >
-          {/* {tab === 'screenshots' && <ScreenShots />} */}
-          <video width={320} height={240} controls>
-            <source
-              src='https://res.cloudinary.com/dpnkrz8c8/video/upload/v1672546687/portfolio/b5h5xpxap3hfnn3gewqw.webm'
-              type='video/webm'
-            />
-          </video>
-          {tab === 'features' && <Features />}
-          {tab === 'about' && <About />}
+          {tab == 'screenshots' && (
+            <video controls>
+              <source
+                src='https://res.cloudinary.com/dpnkrz8c8/video/upload/v1672546687/portfolio/b5h5xpxap3hfnn3gewqw.webm'
+                type='video/webm'
+              />
+            </video>
+          )}
+          {tab == 'features' && <Features features={features} />}
+          {tab == 'about' && <About paragraphs={about} />}
         </div>
         <div className='flex flex-wrap space-x-2 mt-4 justify-center lg:hidden max-w-[496.5px] mx-4 md:mx-0'>
           <React />

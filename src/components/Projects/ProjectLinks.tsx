@@ -1,10 +1,6 @@
 interface Props {
-  repo?: {
-    href: string
-  }
-  site?: {
-    href: string
-  }
+  repo?: string
+  site?: string
 }
 
 function ProjectLinks({ repo, site }: Props) {
@@ -12,7 +8,9 @@ function ProjectLinks({ repo, site }: Props) {
     <div className='flex space-x-4 text-xs md:text-base font-inter'>
       {repo ? (
         <a
-          href={repo.href}
+          href={repo}
+          target='_blank'
+          rel='noreferrer'
           className='flex border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
         >
           <Unlock />
@@ -26,7 +24,9 @@ function ProjectLinks({ repo, site }: Props) {
       )}
       {site && (
         <a
-          href={site.href}
+          href={site}
+          target='_blank'
+          rel='noreferrer'
           className='flex border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
         >
           <Eye />
@@ -38,10 +38,6 @@ function ProjectLinks({ repo, site }: Props) {
 }
 
 export default ProjectLinks
-
-const Link = ({ href }: { href?: string }) => {
-  return href ? <a href={href}>{}</a> : <div></div>
-}
 
 const Lock = () => (
   <svg
