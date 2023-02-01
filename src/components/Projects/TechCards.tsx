@@ -61,6 +61,33 @@ export const Typescript = () => (
   />
 )
 
+export const Vue = () => (
+  <TechCard
+    src='https://res.cloudinary.com/dpnkrz8c8/image/upload/v1675202706/portfolio/pmynrrlczsf7pd8cqczi.svg'
+    label='Vue'
+    spanClass='ml-2'
+    imgClass='ml-2'
+  />
+)
+
+export const Gsap = () => (
+  <TechCard
+    src='https://res.cloudinary.com/dpnkrz8c8/image/upload/v1675203178/portfolio/mutyxzcvfecfcxyrbuwk.png'
+    label='Gsap'
+    spanClass='ml-2'
+    imgClass='ml-2'
+  />
+)
+
+export const Pinia = () => (
+  <TechCard
+    src='https://res.cloudinary.com/dpnkrz8c8/image/upload/v1675203394/portfolio/vi1cvkovzvxcaeeexv3k.png'
+    label='Pinia'
+    spanClass='ml-2'
+    imgClass='ml-2 scale-[1.8]'
+  />
+)
+
 interface Props {
   src?: string
   label: string
