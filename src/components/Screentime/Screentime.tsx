@@ -38,7 +38,7 @@ function Screentime() {
       "Screen Time is an app that helps parents find the television shows that fit their child's learning needs.",
       "Having a 4 year old in the house, I have watched my fair share of children's TV shows. I've noticed that each show has a few specific learning focuses that they aim to teach the viewer. For instance, my son's favorite show Wild Kratts teaches children about animals, nature, and making predictions.",
       "Screen Time help's parents discover shows that teach their children what they want them to learn.",
-      '  Search for shows by age range or teaching focus, create a plan for your child, and track of the shows they respond to.',
+      '  Search for shows by age range or teaching focus, create a plan for your child, and keep track of the shows they respond to.',
       '',
     ],
     []
