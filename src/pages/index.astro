@@ -3,22 +3,21 @@ import '../styles/base.css'
 import Layout from '../layouts/Layout.astro'
 import Sparks from '../components/Sparks.astro'
 import Hero from '../components/Hero.astro'
-import UFO from '../components/UFO.astro'
 import Screentime from '../components/Screentime'
 import MetaCompare from '../components/MetaCompare'
 import Cribbage from '../components/Cribbage'
+import CTA from '../components/CTA/CTA.astro'
 ---
 
 <Layout title='Welcome to Astro.'>
   <main>
     <Sparks />
-    <!-- <UFO /> -->
     <Hero />
 
     <Screentime client:visible />
     <MetaCompare client:visible />
     <Cribbage client:visible />
-    <div class='h-screen'></div>
+    <CTA />
     <div class='h-screen'></div>
   </main>
 </Layout>

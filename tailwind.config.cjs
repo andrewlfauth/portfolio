@@ -46,7 +46,77 @@ module.exports = {
         'nightowl-border': '#1d3b53',
       },
       animation: {
-        blink: 'pulse 1s linear infinite',
+        blink: 'blink 1s linear infinite',
+        blinkCat: 'blinkCat 1s linear infinite',
+        blinkOwl: 'blinkOwl 1s linear infinite',
+      },
+      keyframes: {
+        blink: {
+          '0%': {
+            background: '#F78C6C',
+            boxShadow: '0 0 5px #F78C6C',
+          },
+          '25%': {
+            background: '#F07178',
+            boxShadow: '0 0 5px #F07178',
+          },
+          '50%': {
+            background: '#F78C6C',
+            boxShadow: '0 0 5px #F78C6C',
+          },
+          '75%': {
+            background: '#F07178',
+            boxShadow: '0 0 5px #F07178',
+          },
+          '100%': {
+            background: '#FF5370',
+            boxShadow: '0 0 5px #FF5370',
+          },
+        },
+        blinkCat: {
+          '0%': {
+            background: '#B7BDF8',
+            boxShadow: '0 0 5px #B7BDF8',
+          },
+          '25%': {
+            background: '#8AADF4',
+            boxShadow: '0 0 5px #8AADF4',
+          },
+          '50%': {
+            background: '#F5BDE6',
+            boxShadow: '0 0 5px #F5BDE6',
+          },
+          '75%': {
+            background: '#8AADF4',
+            boxShadow: '0 0 5px #8AADF4',
+          },
+          '100%': {
+            background: '#F5BDE6',
+            boxShadow: '0 0 5px #F5BDE6',
+          },
+        },
+        blinkOwl: {
+          '0%': {
+            background: '#f78c6c',
+            boxShadow: '0 0 5px #f78c6c',
+          },
+          '25%': {
+            background: '#82AAFF',
+            boxShadow: '0 0 5px #82AAFF',
+          },
+          '50%': {
+            background: '#f78c6c',
+            boxShadow: '0 0 5px #f78c6c',
+          },
+          '75%': {
+            background: '#82AAFF',
+            boxShadow: '0 0 5px #82AAFF',
+          },
+          '100%': {
+            background: '#f78c6c',
+            boxShadow: '0 0 5px #f78c6c',
+          },
+        },
       },
       fontFamily: {
         inter: '"Inter", sans-serif',

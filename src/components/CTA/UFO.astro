@@ -1,0 +1,134 @@
+<div class='ufo-container scale-75'>
+  <div
+    class='box bg-gradient-to-b from-neutral-300 to-neutral-600 catppuccin:from-white catppuccin:to-cat-blue nightowl:from-neutral-300 nightowl:to-neutral-700'
+  >
+    <div class='top-cover'>
+      <div class='glass'></div>
+    </div>
+    <div class='bottom-light'>
+      <div class='dots'>
+        <span
+          style='--i:1;'
+          class='animate-blink catppuccin:animate-blinkCat nightowl:animate-blinkOwl'
+        ></span>
+        <span
+          style='--i:2;'
+          class='animate-blink catppuccin:animate-blinkCat nightowl:animate-blinkOwl'
+        ></span>
+        <span
+          style='--i:3;'
+          class='animate-blink catppuccin:animate-blinkCat nightowl:animate-blinkOwl'
+        ></span>
+        <span
+          style='--i:4;'
+          class='animate-blink catppuccin:animate-blinkCat nightowl:animate-blinkOwl'
+        ></span>
+      </div>
+      <div
+        class='light border-b-[220px] catppuccin:border-cat-pink nightowl:border-nightowl-orange border-mat-red before:bg-[#ff3b5b] catppuccin:before:bg-pink-300 nightowl:before:bg-[#f77852] origin-top opacity-0'
+      >
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .box {
+    position: relative;
+    width: 350px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    border-top: 1px solid white;
+  }
+  .box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #666666;
+    top: 50%;
+    transform: translateY((-50%));
+    box-shadow: 0 1px 3px rgba(0, 0, 0.6), 0 -1px 3px rgba(255, 255, 255, 0.2);
+  }
+  .box .top-cover {
+    position: relative;
+    width: 130px;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    z-index: -10;
+  }
+  .box .top-cover .glass {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    top: -60px;
+    border-radius: 100px 100px 0 0;
+    border-top: 0.1px solid white;
+  }
+  .box .glass:before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: white;
+    top: 20px;
+    left: 70px;
+    filter: blur(20px);
+  }
+  .box .bottom-light {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    background: linear-gradient(
+      90deg,
+      #666666,
+      #757575,
+      #949494,
+      #757575,
+      #666666
+    );
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 10px 10px;
+  }
+  .box .bottom-light .light {
+    position: absolute;
+    width: 200px;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    bottom: -220px;
+    left: -38px;
+  }
+  .box .bottom-light .light::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: -60px;
+    bottom: -245px;
+    border-radius: 50%;
+  }
+  .box .bottom-light .dots {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box .bottom-light .dots span {
+    width: 10px;
+    height: 10px;
+    background: #949494;
+    margin: 0 5px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3),
+      -1px -1px 2px rgba(255, 255, 255, 0.3);
+    animation-delay: calc(var(--i) * 0.2s);
+  }
+</style>

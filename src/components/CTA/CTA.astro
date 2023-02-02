@@ -1,0 +1,60 @@
+---
+import UFO from './UFO.astro'
+import InputField from '../Menu/InputField.astro'
+import MenuButton from '../Menu/MenuButton'
+---
+
+<div
+  id='cta-container'
+  class='mt-72 relative flex flex-col items-center justify-center'
+>
+  <div id='cta-ufo' class='mx-auto w-fit pb-44'>
+    <UFO />
+  </div>
+  <div
+    id='cta-form'
+    class='bg-neutral-800 catppuccin:bg-transparent nightowl:bg-nightowl-border catppuccin:border-2 w-5/6 md:w-[400px] p-6 rounded-md mx-auto space-y-8 pb-8'
+  >
+    <span
+      class='text-3xl font-bold tracking-tight text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-blue mb-10'
+      >Get in touch</span
+    >
+    <form action='post' class='space-y-8' data-netlify='true' id='CTA-form'>
+      <InputField name='name' label='Name' />
+      <InputField name='company' label='Company (optional)' />
+      <InputField name='contact' label='Email or Phone Number' />
+      <InputField name='message' label='Your message' textarea={{ rows: 6 }} />
+      <MenuButton
+        type='submit'
+        text='Ship it'
+        className='hover:skew-y-2 float-right'
+      />
+    </form>
+  </div>
+</div>
+
+<script>
+  import { gsap } from '../../utils/gsap'
+
+  let tl = gsap.timeline()
+  tl.from('#cta-ufo', {
+    y: -200,
+    x: 100,
+    scale: 0,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: '#cta-ufo',
+      start: 'top bottom',
+      end: 'top 10%',
+      scrub: 2,
+    },
+  })
+  gsap.to('.light', {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: '#cta-ufo',
+      start: 'bottom 50%',
+      scrub: true,
+    },
+  })
+</script>
