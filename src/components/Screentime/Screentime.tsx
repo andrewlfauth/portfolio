@@ -25,10 +25,11 @@ function Screentime() {
       'User authentication',
       'Searchable database of 25+ children shows',
       'Title, description, teaching focus, and age range fields',
-      'Like and save shows',
-      "Matches users with shows that fit their child's learning goals",
-      'Save groups of shows in a "plan"',
+      'Dropdowns support multiple filtering options',
+      'Like and save shows to profile',
+      'Create and save groups of related shows in a "Plan"',
       'View plans created by other users with "Featured Plans"',
+      "Matches users with shows based on their child's learning goals",
     ],
     []
   )
@@ -36,48 +37,32 @@ function Screentime() {
   const about = useMemo(
     () => [
       "Screen Time is an app that helps parents find the television shows that fit their child's learning needs.",
-      "Having a 4 year old in the house, I have watched my fair share of children's TV shows. I've noticed that each show has a few specific learning focuses that they aim to teach the viewer. For instance, my son's favorite show Wild Kratts teaches children about animals, nature, and making predictions.",
-      "Screen Time help's parents discover shows that teach their children what they want them to learn.",
-      '  Search for shows by age range or teaching focus, create a plan for your child, and keep track of the shows they respond to.',
+      "Having a 4 year old in the house, I have watched my fair share of children's TV shows. I've noticed that each show has a few specific learning focuses that they aim to teach the viewer.",
+      "For instance, my son's favorite show Wild Kratts teaches children about animals, nature, and making predictions.",
+      'So, with my vast knowledge of kiddie shows, I put together a database of programs and built this app to help parents navigate them.',
+      'Search for shows by age range and teaching focus, create a plan for your child, and keep track of the shows that they respond to.',
       '',
     ],
     []
   )
 
   useEffect(() => {
-    gsap.from([contentRef.current, linksRef.current], {
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: 'top 80%',
-        end: 'top 50%',
-        scrub: 1,
-        once: true,
-      },
-      y: 80,
-      opacity: 0,
-    })
-    gsap.from(tabsRef.current, {
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: 'top 80%',
-      },
-      opacity: 0,
-    })
     gsap.from(cardsRef.current!.children, {
       scrollTrigger: {
         trigger: contentRef.current,
         start: 'top 80%',
       },
-      stagger: 0.2,
+      stagger: 0.1,
       x: -150,
       opacity: 0,
       delay: 0.3,
+      ease: 'power1.out',
     })
   }, [])
 
   return (
     <div class='pt-60'>
-      <div className='pb-6 md:pb-10'>
+      <div className='pb-6 md:pb-16'>
         <h2 className='font-redhat text-4xl md:text-5xl text-title text-center pb-2'>
           Screen Time
         </h2>
