@@ -10,25 +10,22 @@ import {
   Tailwind,
   Typescript,
 } from '../Projects/TechCards'
-import ScreenShots from './ScreenShots'
 import Features from '../Projects/Features'
 import About from '../Projects/About'
 
 function MetaCompare() {
-  const { tab, setTab, tabsRef } = useProjectTabs()
-  const linksRef = useRef<HTMLDivElement>(null)
+  const { tab, setTab } = useProjectTabs()
   const cardsRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
 
   const features = useMemo(
     () => [
-      'Scrape and persist website data',
       "Infers a page's target and semantic keywords",
+      'Scrape and persist website data',
       'Keyword highlighting and usage statistics',
       'Heading, Img, Meta, and Anchor tag tables',
       'Search bar with autocomplete, autosuggest, and multiple filters',
       'Print and CSV download for tables',
-      'Improvement suggestion and issue detection algorithims for tag content',
+      'Improvement suggestion and issue detection for site content',
       'Social sharing preview for scraped pages',
       'Slideshow of relevant page images',
       'Dark mode',
@@ -38,54 +35,38 @@ function MetaCompare() {
 
   const about = useMemo(
     () => [
-      'Seo tools can be very expensive, especially for someone just starting out in SEO. Not to mention, it is nearly impossible for these tools to predict thigns with 100% accuracy... yadyydada',
+      'Before getting into web development I was a SEO. I always felt there was a need for an affordable SEO tool that could help make optimizing a site easier for anyone.',
+      "I created Meta Compare with this goal in mind. Rather than predicting search volume or keyword competition, this app focuses on the web page's content.",
+      "After a web page is scraped, it's content is loaded into a user friendly interface and broken down into related tabs. (Headings, Imgs, Meta, etc)",
+      'The app provides content improvements, and points out any harmful practices that are negatively affecting your sites SEO.',
+      "Is designed this app to make SEO work easier and more enjoyable. It is the SEO tool I wish I'd had while working in the industry.",
     ],
     []
   )
 
   useEffect(() => {
-    gsap.from([contentRef.current, linksRef.current], {
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: 'top 80%',
-        end: 'top 50%',
-        scrub: 1,
-        once: true,
-      },
-      y: 80,
-      opacity: 0,
-    })
-    gsap.from(tabsRef.current, {
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: 'top 80%',
-      },
-      opacity: 0,
-    })
     gsap.from(cardsRef.current!.children, {
       scrollTrigger: {
-        trigger: contentRef.current,
+        trigger: cardsRef.current,
         start: 'top 80%',
       },
-      stagger: 0.2,
+      stagger: 0.1,
       x: -150,
       opacity: 0,
       delay: 0.3,
+      ease: 'power1.out',
     })
   }, [])
 
   return (
     <div class='pt-60'>
-      <div className='pb-6 md:pb-10'>
+      <div className='pb-6 md:pb-16'>
         <h2 className='font-redhat text-4xl md:text-5xl text-title text-center pb-2'>
           Meta Compare
         </h2>
-        <Tabs tabsRef={tabsRef} tab={tab} setTab={setTab} />
+        <Tabs tab={tab} setTab={setTab} />
       </div>
-      <div
-        ref={linksRef}
-        className='mx-auto w-fit mb-4 lg:translate-x-[-178px]'
-      >
+      <div className='mx-auto w-fit mb-4 lg:translate-x-[-178px]'>
         <ProjectLinks />
       </div>
 
@@ -100,10 +81,7 @@ function MetaCompare() {
           <Tailwind />
           <Cheerio />
         </div>
-        <div
-          ref={contentRef}
-          class='min-h-[285px] lg:w-[697px] md:h-[400px] px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'
-        >
+        <div class='min-h-[285px] lg:w-[697px] md:h-[400px] px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'>
           {tab == 'screenshots' && (
             <video controls>
               <source

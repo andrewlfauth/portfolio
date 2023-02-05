@@ -1,15 +1,11 @@
 interface Props {
-  tabsRef: any
   tab: string
   setTab: any
 }
 
-function Tabs({ tabsRef, tab, setTab }: Props) {
+function Tabs({ tab, setTab }: Props) {
   return (
-    <div
-      ref={tabsRef}
-      class='mx-auto w-fit md:text-lg font-redhat flex space-x-4'
-    >
+    <div class='mx-auto w-fit md:text-lg font-redhat flex space-x-4'>
       <span
         onClick={() => setTab('screenshots')}
         className={`${

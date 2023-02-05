@@ -8,10 +8,8 @@ import Features from '../Projects/Features'
 import { gsap } from '../../utils/gsap'
 
 function Cribbage() {
-  const { tab, setTab, tabsRef } = useProjectTabs()
-  const linksRef = useRef<HTMLDivElement>(null)
+  const { tab, setTab } = useProjectTabs()
   const cardsRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
 
   const features = useMemo(
     () => [
@@ -39,48 +37,27 @@ function Cribbage() {
   )
 
   useEffect(() => {
-    gsap.from([contentRef.current, linksRef.current], {
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: 'top 80%',
-        end: 'top 50%',
-        scrub: 1,
-        once: true,
-      },
-      y: 80,
-      opacity: 0,
-    })
-    gsap.from(tabsRef.current, {
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: 'top 80%',
-      },
-      opacity: 0,
-    })
     gsap.from(cardsRef.current!.children, {
       scrollTrigger: {
-        trigger: contentRef.current,
+        trigger: cardsRef.current,
         start: 'top 80%',
       },
-      stagger: 0.2,
+      stagger: 0.1,
       x: -150,
       opacity: 0,
       delay: 0.3,
+      ease: 'power1.out',
     })
   }, [])
-
   return (
     <div class='pt-60'>
-      <div className='pb-6 md:pb-10'>
+      <div className='pb-6 md:pb-16'>
         <h2 className='font-redhat text-4xl md:text-5xl text-title text-center pb-2'>
-          Cribbage App
+          Cribbage
         </h2>
-        <Tabs tabsRef={tabsRef} tab={tab} setTab={setTab} />
+        <Tabs tab={tab} setTab={setTab} />
       </div>
-      <div
-        ref={linksRef}
-        className='mx-auto w-fit mb-4 lg:translate-x-[-178px]'
-      >
+      <div className='mx-auto w-fit mb-4 lg:translate-x-[-106px]'>
         <ProjectLinks
           repo='https://github.com/andrewlfauth/cribbage'
           site='https://cribbage.vercel.app/'
@@ -97,10 +74,7 @@ function Cribbage() {
           <Tailwind />
           <Gsap />
         </div>
-        <div
-          ref={contentRef}
-          class='min-h-[285px] lg:w-[697px]  px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'
-        >
+        <div class='min-h-[285px] lg:w-[697px]  px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'>
           {tab == 'screenshots' && (
             <video controls className='rounded-md'>
               <source

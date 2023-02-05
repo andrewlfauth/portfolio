@@ -15,9 +15,8 @@ import {
 import ScreenShots from './ScreenShots'
 
 function Screentime() {
-  const { tab, setTab, tabsRef } = useProjectTabs()
+  const { tab, setTab } = useProjectTabs()
   const cardsRef = useRef<HTMLDivElement>(null)
-  const linksRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
   const features = useMemo(
@@ -49,7 +48,7 @@ function Screentime() {
   useEffect(() => {
     gsap.from(cardsRef.current!.children, {
       scrollTrigger: {
-        trigger: contentRef.current,
+        trigger: cardsRef.current,
         start: 'top 80%',
       },
       stagger: 0.1,
@@ -66,12 +65,9 @@ function Screentime() {
         <h2 className='font-redhat text-4xl md:text-5xl text-title text-center pb-2'>
           Screen Time
         </h2>
-        <Tabs tabsRef={tabsRef} tab={tab} setTab={setTab} />
+        <Tabs tab={tab} setTab={setTab} />
       </div>
-      <div
-        ref={linksRef}
-        className='mx-auto w-fit mb-4 lg:translate-x-[-106px]'
-      >
+      <div className='mx-auto w-fit mb-4 lg:translate-x-[-106px]'>
         <ProjectLinks
           repo='https://github.com/andrewlfauth/screen-time'
           site='https://screen-time.vercel.app'
