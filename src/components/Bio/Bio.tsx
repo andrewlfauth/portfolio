@@ -1,11 +1,11 @@
-import { useState } from "preact/hooks"
-import Skills from "./Skills"
+import { useState } from 'preact/hooks'
+import Skills from './Skills'
 
 function Bio() {
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <div className='py-32 h-screen'>
+    <div className='py-32'>
       <h2 className='font-redhat text-4xl md:text-5xl text-title text-center mb-20'>
         Bio
       </h2>
@@ -23,13 +23,13 @@ function Bio() {
         </p>
         <p className='mb-4'>Team player who thrives in a creative setting</p>
 
-        <span
-          onClick={() => setShowMore(!showMore)}
-          className='text-gray-400 text-lg mt-20 mb-4 block'
-        >
+        <span className='text-gray-400 text-lg mt-20 mb-4 block'>
           Technology skills
         </span>
-        <Skills showMore={showMore} />
+        <Skills
+          showMore={showMore}
+          handleClick={() => setShowMore(!showMore)}
+        />
       </div>
     </div>
   )
