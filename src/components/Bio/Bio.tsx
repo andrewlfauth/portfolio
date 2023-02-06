@@ -1,27 +1,22 @@
-import { useState } from 'preact/hooks'
-import Skills from './Skills'
+import { useState } from "preact/hooks"
+import Skills from "./Skills"
 
 function Bio() {
   const [showMore, setShowMore] = useState(false)
 
   return (
     <div className='py-32'>
-      <h2 className='font-redhat text-4xl md:text-5xl text-title text-center mb-20'>
+      <h2 className='font-redhat text-4xl md:text-5xl text-title text-center mb-24'>
         Bio
       </h2>
-      {/* <img
-        src='https://res.cloudinary.com/dpnkrz8c8/image/upload/v1675571476/portfolio/gvpekx21igsqdszyetjo.png'
-        alt=''
-      /> */}
-      <div className='text-mat-blue text-3xl font-medium max-w-4xl mx-auto'>
-        <p className='mb-4'>I got introduced to coding while working in SEO.</p>
-        <p className='mb-4'>
-          Since then, creating complex UI logic has been what excites me
+      <div className='text-type text-3xl font-medium max-w-4xl mx-auto'>
+        <p className='mb-6'>
+          Became interested in coding while working as a SEO
         </p>
-        <p className='mb-4'>
-          I am always up for a challenge and constantly learning new things
+        <p className='mb-6'>
+          Enjoys the challenge of creating complex UI logic
         </p>
-        <p className='mb-4'>Team player who thrives in a creative setting</p>
+        <p className='mb-6'>Free time is spent around friends and family</p>
 
         <span className='text-gray-400 text-lg mt-20 mb-4 block'>
           Technology skills
