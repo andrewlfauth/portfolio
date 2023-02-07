@@ -5,21 +5,21 @@ interface Props {
 
 function ProjectLinks({ repo, site }: Props) {
   return (
-    <div className='flex space-x-4 text-xs md:text-base font-inter'>
+    <div className='flex space-x-4 font-inter'>
       {repo ? (
         <a
           href={repo}
           target='_blank'
           rel='noreferrer'
-          className='flex border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
+          className='flex ms:border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
         >
           <Unlock />
-          <span className='ml-2 text-sm md:text-base'>Public Repo</span>
+          <span className='ml-2 text-xs md:text-base'>Public Repo</span>
         </a>
       ) : (
-        <div className='flex border-2 border-primary rounded-full pr-3 pl-3 py-1 items-center text-gray-100'>
+        <div className='flex lg:border-2 border-primary rounded-full pr-3 pl-3 py-1 items-center text-gray-100'>
           <Lock />
-          <span className='ml-2 text-sm md:text-base'>Private Repo</span>
+          <span className='ml-2 text-xs md:text-base'>Private Repo</span>
         </div>
       )}
       {site && (
@@ -27,10 +27,10 @@ function ProjectLinks({ repo, site }: Props) {
           href={site}
           target='_blank'
           rel='noreferrer'
-          className='flex border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
+          className='flex lg:border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
         >
           <Eye />
-          <span className='ml-2 text-sm md:text-base'>Live Site</span>
+          <span className='ml-2 text-xs md:text-base'>Live Site</span>
         </a>
       )}
     </div>
@@ -41,7 +41,7 @@ export default ProjectLinks
 
 const Lock = () => (
   <svg
-    className='scale-[.7] md:scale-[.9] md:-mt-[2px]'
+    className='scale-[.7] md:scale-[.9] -mt-[2px]'
     width='16'
     height='21'
     viewBox='0 0 16 21'
@@ -57,7 +57,7 @@ const Lock = () => (
 
 const Unlock = () => (
   <svg
-    className='scale-[.7] md:scale-[.9] md:-mt-[2px]'
+    className='scale-[.7] md:scale-[.9] -mt-[2px]'
     width='16'
     height='21'
     viewBox='0 0 16 21'
