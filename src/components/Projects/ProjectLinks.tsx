@@ -11,7 +11,7 @@ function ProjectLinks({ repo, site }: Props) {
           href={repo}
           target='_blank'
           rel='noreferrer'
-          className='flex ms:border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
+          className='flex ms:border-2 border-primary hover:border-mat-blue hover:catppuccin:border-cat-pink hover:nightowl:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
         >
           <Unlock />
           <span className='ml-2 text-xs md:text-base'>Public Repo</span>
@@ -27,7 +27,7 @@ function ProjectLinks({ repo, site }: Props) {
           href={site}
           target='_blank'
           rel='noreferrer'
-          className='flex lg:border-2 border-primary hover:border-mat-blue catppuccin:hover:border-cat-pink nightowl:hover:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
+          className='flex ms:border-2 border-primary hover:border-mat-blue hover:catppuccin:border-cat-pink hover:nightowl:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100'
         >
           <Eye />
           <span className='ml-2 text-xs md:text-base'>Live Site</span>
