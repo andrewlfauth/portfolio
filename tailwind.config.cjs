@@ -127,6 +127,7 @@ module.exports = {
   },
   plugins: [customVariants],
   future: {
-    hoverOnlyWhenSupported: true
-  }
+    hoverOnlyWhenSupported: true,
+  },
+
 }

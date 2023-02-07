@@ -1,26 +1,26 @@
-import { useEffect, useRef } from 'preact/hooks'
-import { gsap } from '../../utils/gsap'
-import { settings } from '../../stores/settings'
-import CursorToggle from './CursorToggle'
-import github from '../../assets/github.svg'
-import linkedin from '../../assets/linkedin.svg'
-import resume from '../../assets/resume.svg'
-import Nav from './Nav'
+import { useEffect, useRef } from "preact/hooks"
+import { gsap } from "../../utils/gsap"
+import { settings } from "../../stores/settings"
+import CursorToggle from "./CursorToggle"
+import github from "../../assets/github.svg"
+import linkedin from "../../assets/linkedin.svg"
+import resume from "../../assets/resume.svg"
+import Nav from "./Nav"
 
 function Sidebar() {
   const btnsRef = useRef<HTMLDivElement>(null)
 
-  const openContactForm = () => settings.setKey('showContactForm', true)
+  const openContactForm = () => settings.setKey("showContactForm", true)
 
   useEffect(() => {
     gsap.to(btnsRef.current, {
       scrollTrigger: {
         trigger: btnsRef.current,
-        start: 'bottom -370',
+        start: "bottom -370",
         scrub: true,
       },
       opacity: 100,
-      pointerEvents: 'auto',
+      pointerEvents: "auto",
     })
   }, [])
 
