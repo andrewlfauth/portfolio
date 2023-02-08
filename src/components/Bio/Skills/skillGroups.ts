@@ -4,6 +4,7 @@ const skillGroups = {
       img: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1670966092/portfolio/x7hmfy1xuhk3szd45x0m.svg",
       alt: "html5",
       label: "HTML",
+      scale: "scale-90",
     },
   ],
   styling: [
@@ -11,6 +12,7 @@ const skillGroups = {
       img: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1670966102/portfolio/cl5ggaasj3ktju3tzmnk.svg",
       alt: "css3 icon",
       label: "CSS",
+      scale: "scale-90",
     },
     {
       img: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1670966110/portfolio/fg7degx0x3uvt5j3hm6s.svg",
@@ -23,16 +25,19 @@ const skillGroups = {
       img: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1670966813/portfolio/nyxmrl5ft955pip9a501.png",
       alt: "javascript icon",
       label: "Javascript",
+      scale: "scale-105",
     },
     {
       img: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1675642170/portfolio/yehdzx0lwshryruxnuwd.png",
       alt: "typescript icon",
       label: "Typescript",
+      scale: "scale-105",
     },
     {
       img: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1670965947/portfolio/krlnaehopqzazdppgleb.svg",
       alt: "nodjs icon",
       label: "Node JS",
+      scale: "scale-95",
     },
   ],
   frontEndFrameworks: [
@@ -69,6 +74,7 @@ const skillGroups = {
       img: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1670977455/portfolio/adm7c7k0eixqnfqhzmd6.png",
       alt: "remix icon",
       label: "Remix",
+      scale: "scale-110",
     },
     {
       img: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1675642814/portfolio/zju14l8sgewbn1pbzkto.png",

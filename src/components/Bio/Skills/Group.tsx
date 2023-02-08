@@ -1,4 +1,4 @@
-import useDropdown from '../../hooks/useDropdown'
+import useDropdown from "../../hooks/useDropdown"
 
 interface Props {
   icons: SkillIcon[]
@@ -25,14 +25,14 @@ interface SkillIcon {
 
 const Icon = ({ icon }: { icon: SkillIcon }) => (
   <div className='flex flex-col items-center'>
-    <div className='w-20 h-20 select-none'>
+    <div className='w-10 h-10 md:w-14 md:h-14 select-none'>
       <img
-        className={`${icon.scale || ''} object-scale-down w-full h-full`}
+        className={`${icon.scale || ""} object-scale-down w-full h-full`}
         src={icon.img}
         alt={icon.alt}
       />
     </div>
-    <h3 className='text-gray-400 text-center text-sm tracking-wide font-normal'>
+    <h3 className='text-gray-400 text-center text-xs md:text-sm tracking-wide font-normal mt-1'>
       {icon.label}
     </h3>
   </div>
