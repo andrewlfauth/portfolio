@@ -1,26 +1,71 @@
-import { useState } from 'preact/hooks'
+import { useState, useEffect } from 'preact/hooks'
 import { settings } from '../../stores/settings'
 import MenuButton from '../Menu/MenuButton'
+import NavLink from './NavLink'
+
+type Section = 'home' | 'projects' | 'bio'
 
 function Nav() {
   const [openMenu, setOpenMenu] = useState(false)
+  const [activeSection, setActiveSection] = useState<Section>('home')
 
-  const handleClick = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const openContactForm = () => {
     settings.setKey('showContactForm', true)
   }
+
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            let id = entry.target.id
+            if (id.includes('-')) setActiveSection('projects')
+            else setActiveSection(id as Section)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    const home = document.querySelector('#home') as HTMLElement
+    const projectsStart = document.querySelector(
+      '#projects-start'
+    ) as HTMLElement
+    const projectsEnd = document.querySelector('#projects-end') as HTMLElement
+    const bio = document.querySelector('#bio') as HTMLElement
+
+    io.observe(home)
+    io.observe(projectsStart)
+    io.observe(projectsEnd)
+    io.observe(bio)
+  })
 
   return (
     <nav className='fixed top-0 right-0 z-50 pt-6 pr-20'>
       <ul className='hidden lg:flex space-x-20 text-transparent  font-medium text-lg font-inter'>
-        <li className='text-type hover:text-mat-red catppuccin:hover:text-cat-blue nightowl:hover:text-nightowl-orange after:bg-mat-red catppuccin:after:bg-cat-blue nightowl:after:bg-nightowl-orange after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:duration-200 after:origin-bottom-left relative duration-200'>
-          Home
-        </li>
-        <li className='text-type hover:text-mat-red catppuccin:hover:text-cat-blue nightowl:hover:text-nightowl-orange after:bg-mat-red catppuccin:after:bg-cat-blue nightowl:after:bg-nightowl-orange after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:duration-200 after:origin-bottom-left relative duration-200'>
-          Projects
-        </li>
-        <li className='text-type hover:text-mat-red catppuccin:hover:text-cat-blue nightowl:hover:text-nightowl-orange after:bg-mat-red catppuccin:after:bg-cat-blue nightowl:after:bg-nightowl-orange after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 hover:after:scale-x-100 after:duration-200 after:origin-bottom-left relative duration-200'>
-          Bio
-        </li>
+        <NavLink
+          href='#'
+          text='Home'
+          handleClick={scrollToTop}
+          section='home'
+          activeSection={activeSection}
+        />
+        <NavLink
+          href='#projects-start'
+          text='Projects'
+          section='projects'
+          activeSection={activeSection}
+        />
+        <NavLink
+          href='#bio'
+          text='Bio'
+          section='bio'
+          activeSection={activeSection}
+        />
       </ul>
 
       <button
@@ -50,9 +95,21 @@ function Nav() {
           Menu
         </span>
         <ul className='flex flex-col space-y-6 pt-20 font-medium'>
-          <li className='text-type text-2xl'>Home</li>
-          <li className='text-type text-2xl'>Projects</li>
-          <li className='text-type text-2xl'>Bio</li>
+          <li
+            onClick={() => {
+              setOpenMenu(false)
+              scrollToTop()
+            }}
+            className='text-type text-2xl'
+          >
+            <a href='#'>Home</a>
+          </li>
+          <li onClick={() => setOpenMenu(false)} className='text-type text-2xl'>
+            <a href='#projects'>Projects</a>
+          </li>
+          <li onClick={() => setOpenMenu(false)} className='text-type text-2xl'>
+            <a href='#bio'>Bio</a>
+          </li>
         </ul>
         <div className='flex mt-20 space-x-6'>
           <svg
@@ -92,7 +149,11 @@ function Nav() {
             />
           </svg>
         </div>
-        <MenuButton text='contact' className='mt-36' onClick={handleClick} />
+        <MenuButton
+          text='contact'
+          className='mt-36'
+          onClick={openContactForm}
+        />
       </div>
     </nav>
   )
