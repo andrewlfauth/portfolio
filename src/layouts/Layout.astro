@@ -13,7 +13,7 @@ const { title } = Astro.props
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.png' />
+    <link rel='icon' type='image/svg+xml' href='/src/assets/favicon.png' />
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link
       rel='preconnect'
@@ -37,9 +37,9 @@ const { title } = Astro.props
 
 <script>
   import { settings } from '../stores/settings'
-  import faviconDefault from '../../public/favicon.png'
-  import faviconCatppuccin from '../../public/favicon_catppuccin.png'
-  import faviconNightowl from '../../public/favicon_nightowl.png'
+  import faviconDefault from '../../src/assets/favicon.png'
+  import faviconCatppuccin from '../../src/assets/favicon_catppuccin.png'
+  import faviconNightowl from '../../src/assets/favicon_nightowl.png'
 
   const body = document.querySelector('body') as HTMLElement
   const html = document.querySelector('html') as HTMLElement
