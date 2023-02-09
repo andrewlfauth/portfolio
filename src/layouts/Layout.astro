@@ -37,18 +37,34 @@ const { title } = Astro.props
 
 <script>
   import { settings } from '../stores/settings'
+  import faviconDefault from '../../public/favicon.png'
+  import faviconCatppuccin from '../../public/favicon_catppuccin.png'
+  import faviconNightowl from '../../public/favicon_nightowl.png'
+
   const body = document.querySelector('body') as HTMLElement
   const html = document.querySelector('html') as HTMLElement
   let themes = ['default', 'material', 'catppuccin', 'nightowl']
+
+  const icon = document.querySelector('link[rel="icon"]') as HTMLLinkElement
 
   settings.subscribe((v) => {
     let theme = v.cursor.style
     themes.forEach((t) => html.classList.remove(t))
     if (theme !== 'none') {
       html.classList.add(theme)
-      body.classList.add('cursor-none')
     } else {
+      body.classList.add('cursor-none')
       body.classList.remove('cursor-none')
+    }
+
+    if (v.cursor.style == 'default') {
+      icon.href = faviconDefault
+    }
+    if (v.cursor.style == 'catppuccin') {
+      icon.href = faviconCatppuccin
+    }
+    if (v.cursor.style == 'nightowl') {
+      icon.href = faviconNightowl
     }
   })
 </script>
