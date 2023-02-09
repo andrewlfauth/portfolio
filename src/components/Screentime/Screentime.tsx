@@ -22,9 +22,11 @@ function Screentime() {
   const features = useMemo(
     () => [
       'User authentication',
+      'Dynamic routes',
       'Searchable database of 25+ children shows',
       'Title, description, teaching focus, and age range fields',
       'Dropdowns support multiple filtering options',
+      'CRUD operations',
       'Like and save shows to profile',
       'Create and save groups of related shows in a "Plan"',
       'View plans created by other users with "Featured Plans"',
