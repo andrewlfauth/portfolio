@@ -105,7 +105,7 @@ function Nav() {
             <a href='#'>Home</a>
           </li>
           <li onClick={() => setOpenMenu(false)} className='text-type text-2xl'>
-            <a href='#projects'>Projects</a>
+            <a href='#projects-start'>Projects</a>
           </li>
           <li onClick={() => setOpenMenu(false)} className='text-type text-2xl'>
             <a href='#bio'>Bio</a>

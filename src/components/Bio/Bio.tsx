@@ -6,11 +6,8 @@ function Bio() {
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <div className='pt-60 px-4 sm:px-6'>
-      <h2
-        id='bio'
-        className='font-redhat text-4xl md:text-5xl text-title text-center mb-14 md:mb-24'
-      >
+    <div id='bio' className='pt-60 px-4 sm:px-6'>
+      <h2 className='font-redhat text-4xl md:text-5xl text-title text-center mb-14 md:mb-24'>
         Bio
       </h2>
       <div className='text-type md:text-2xl lg:text-3xl font-medium max-w-4xl mx-auto text-center'>
