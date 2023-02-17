@@ -1,34 +1,54 @@
-import { useEffect, useRef } from 'preact/hooks'
-import { gsap } from '../../utils/gsap'
-import { settings } from '../../stores/settings'
-import CursorToggle from './CursorToggle'
-import github from '../../assets/github.svg'
-import linkedin from '../../assets/linkedin.svg'
-import resume from '../../assets/resume.svg'
-import Nav from './Nav'
+import { useEffect, useRef } from "preact/hooks"
+import { gsap } from "../../utils/gsap"
+import { settings } from "../../stores/settings"
+import CursorToggle from "./CursorToggle"
+import github from "../../assets/github.svg"
+import linkedin from "../../assets/linkedin.svg"
+import resume from "../../assets/resume.svg"
+import Nav from "./Nav"
 
 function Sidebar() {
   const btnsRef = useRef<HTMLDivElement>(null)
+  const bgRef = useRef<HTMLDivElement>(null)
 
-  const openContactForm = () => settings.setKey('showContactForm', true)
+  const openContactForm = () => settings.setKey("showContactForm", true)
 
   useEffect(() => {
-    gsap.to(btnsRef.current, {
+    let tl = gsap.timeline({
       scrollTrigger: {
         trigger: btnsRef.current,
-        start: 'bottom -320',
-        end: 'bottom -332',
+        start: "bottom -320",
+        end: "bottom -332",
         scrub: 1,
       },
-      opacity: 1,
-      x: 0,
-      pointerEvents: 'auto',
     })
+
+    tl.to(
+      btnsRef.current,
+      {
+        opacity: 1,
+        x: 0,
+        pointerEvents: "auto",
+      },
+      "-=0.5"
+    )
+
+    tl.to(
+      bgRef.current,
+      {
+        opacity: 100,
+      },
+      "-=0.5"
+    )
   }, [])
 
   return (
     <>
-      <div className='flex fixed left-0 top-0 z-50 space-x-2 p-4'>
+      <div className='flex fixed left-0 top-0 z-50 space-x-2 p-4 w-full'>
+        <div
+          ref={bgRef}
+          className='absolute top-0 left-0 bg-red-500 w-full h-full bg-primary duration-1000 opacity-0'
+        ></div>
         <CursorToggle />
         <div
           ref={btnsRef}
