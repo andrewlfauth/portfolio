@@ -115,7 +115,11 @@ function MetaCompare() {
         </div>
         <div class='lg:w-[697px] px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'>
           {tab == "screenshots" && (
-            <ImageCycler images={images} interval={6000} />
+            <ImageCycler
+              images={images}
+              interval={6000}
+              className='rounded-md'
+            />
           )}
           {tab == "features" && <Features features={features} />}
           {tab == "about" && <About paragraphs={about} />}
