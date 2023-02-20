@@ -12,6 +12,7 @@ import {
 } from "../Projects/TechCards"
 import Features from "../Projects/Features"
 import About from "../Projects/About"
+import ImageCycler from "../Projects/ImageCycler"
 
 function MetaCompare() {
   const { tab, setTab } = useProjectTabs()
@@ -40,6 +41,37 @@ function MetaCompare() {
       "After a web page is scraped, it's content is loaded into a user friendly interface and broken down into related tabs. (Headings, Imgs, Meta, etc)",
       "The app provides content improvements, and points out any harmful practices that are negatively affecting your sites SEO.",
       "Is designed this app to make SEO work easier and more enjoyable. It is the SEO tool I wish I'd had while working in the industry.",
+    ],
+    []
+  )
+
+  const images = useMemo(
+    () => [
+      {
+        src: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1676853771/portfolio/mc-projects.png",
+        alt: "Meta Compare app dashboard",
+        id: 0,
+      },
+      {
+        src: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1676853985/portfolio/mc-searchbar.png",
+        alt: "Meta Compare app table with search",
+        id: 1,
+      },
+      {
+        src: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1676854204/portfolio/mc-highlighting.png",
+        alt: "Meta Compare app keyword highlighting",
+        id: 2,
+      },
+      {
+        src: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1676854333/portfolio/mc-social.png",
+        alt: "Meta Compare app social appearances",
+        id: 3,
+      },
+      {
+        src: "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1676854432/portfolio/mc-issues.png",
+        alt: "Meta Compare app social appearances",
+        id: 4,
+      },
     ],
     []
   )
@@ -83,12 +115,7 @@ function MetaCompare() {
         </div>
         <div class='lg:w-[697px] px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'>
           {tab == "screenshots" && (
-            <video controls>
-              <source
-                src='https://res.cloudinary.com/dpnkrz8c8/video/upload/v1672546687/portfolio/b5h5xpxap3hfnn3gewqw.webm'
-                type='video/webm'
-              />
-            </video>
+            <ImageCycler images={images} interval={6000} />
           )}
           {tab == "features" && <Features features={features} />}
           {tab == "about" && <About paragraphs={about} />}
