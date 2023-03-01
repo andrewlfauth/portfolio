@@ -48,20 +48,20 @@ function Nav() {
     <nav className='fixed top-0 right-0 z-50 pt-6 pr-20'>
       <ul className='hidden lg:flex space-x-20 text-transparent  font-medium text-lg font-inter'>
         <NavLink
-          href='#'
+          href='/#'
           text='Home'
           handleClick={scrollToTop}
           section='home'
           activeSection={activeSection}
         />
         <NavLink
-          href='#projects-start'
+          href='/#projects-start'
           text='Projects'
           section='projects'
           activeSection={activeSection}
         />
         <NavLink
-          href='#bio'
+          href='/#bio'
           text='Bio'
           section='bio'
           activeSection={activeSection}
