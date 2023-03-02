@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'preact/hooks'
+import { useState, useEffect, useRef } from 'preact/hooks'
 import { settings } from '../../stores/settings'
 import MenuButton from '../Menu/MenuButton'
 import NavLink from './NavLink'
 
-type Section = 'home' | 'projects' | 'bio'
+type Section = 'home' | 'projects' | 'bio' | 'freelance'
 
 function Nav() {
   const [openMenu, setOpenMenu] = useState(false)
   const [activeSection, setActiveSection] = useState<Section>('home')
+  const ioRef = useRef<any>(null)
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -18,7 +19,12 @@ function Nav() {
   }
 
   useEffect(() => {
-    const io = new IntersectionObserver(
+    if (window.location.pathname.includes('/freelance/'))
+      setActiveSection('freelance')
+  }, [window.location])
+
+  useEffect(() => {
+    ioRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -37,12 +43,14 @@ function Nav() {
     ) as HTMLElement
     const projectsEnd = document.querySelector('#projects-end') as HTMLElement
     const bio = document.querySelector('#bio') as HTMLElement
+    const freelance = document.querySelector('#freelance') as HTMLElement
 
-    io.observe(home)
-    io.observe(projectsStart)
-    io.observe(projectsEnd)
-    io.observe(bio)
-  })
+    ioRef.current.observe(home)
+    ioRef.current.observe(projectsStart)
+    ioRef.current.observe(projectsEnd)
+    ioRef.current.observe(bio)
+    ioRef.current.observe(freelance)
+  }, [])
 
   return (
     <nav className='fixed top-0 right-0 z-50 pt-6 pr-20'>
@@ -64,6 +72,12 @@ function Nav() {
           href='/#bio'
           text='Bio'
           section='bio'
+          activeSection={activeSection}
+        />
+        <NavLink
+          href='/#freelance'
+          text='Freelance'
+          section='freelance'
           activeSection={activeSection}
         />
       </ul>
