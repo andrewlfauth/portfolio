@@ -1,6 +1,6 @@
-import { useMemo, useState, useRef, useEffect } from "preact/hooks"
-import { clsx } from "clsx"
-import JobsModal from "./JobsModal"
+import { useMemo, useState, useRef, useEffect } from 'preact/hooks'
+import { clsx } from 'clsx'
+import JobsModal from './JobsModal'
 
 function Freelance() {
   const [activeJobIdx, setActiveJobIdx] = useState(0)
@@ -11,34 +11,34 @@ function Freelance() {
   const jobs = useMemo(
     () => [
       {
-        name: "AVRGLOW Beats",
-        href: "/freelance/avarglow-beats",
+        name: 'AVRGLOW Beats',
+        href: '/freelance/avarglow-beats',
         desktopImageSrc:
-          "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531097/portfolio/avrglow-dt.png",
+          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531097/portfolio/avrglow-dt.png',
         mobileImageSrc:
-          "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531100/portfolio/avrglow-mb.png",
-        bgColorClass: "bg-green-400",
-        borderColorClass: "border-green-400",
+          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531100/portfolio/avrglow-mb.png',
+        bgColorClass: 'bg-green-400',
+        borderColorClass: 'border-green-400',
       },
       {
-        name: "Wells Landscaping",
-        href: "/freelance/wells-landscaping",
+        name: 'Wells Landscaping',
+        href: '/freelance/wells-landscaping',
         desktopImageSrc:
-          "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531644/portfolio/wells-dt.png",
+          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531644/portfolio/wells-dt.png',
         mobileImageSrc:
-          "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531701/portfolio/wells-mb.png",
-        bgColorClass: "bg-emerald-600",
-        borderColorClass: "border-emerald-600",
+          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531701/portfolio/wells-mb.png',
+        bgColorClass: 'bg-emerald-600',
+        borderColorClass: 'border-emerald-600',
       },
       {
-        name: "Southern Spring Cleaners",
-        href: "/freelance/southern-spring-cleaners",
+        name: 'Southern Spring Cleaners',
+        href: '/freelance/southern-spring-cleaners',
         desktopImageSrc:
-          "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677555476/portfolio/ssc-dt1.png",
+          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677892142/portfolio/ssc-dt1.png',
         mobileImageSrc:
-          "https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677556176/portfolio/ssc-mb1.png",
-        bgColorClass: "bg-purple-400",
-        borderColorClass: "border-purple-400",
+          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677892396/portfolio/ssc-mb1.png',
+        bgColorClass: 'bg-purple-400',
+        borderColorClass: 'border-purple-400',
       },
     ],
     []
@@ -58,7 +58,7 @@ function Freelance() {
   }, [activeJobIdx])
 
   const _ = clsx(
-    "bg-green-400 bg-emerald-600 bg-purple-400 border-green-400 border-purple-400 border-green-400"
+    'bg-green-400 bg-emerald-600 bg-purple-400 border-green-400 border-purple-400 border-green-400'
   )
 
   return (
@@ -94,7 +94,7 @@ function Freelance() {
             className={`${
               i === activeJobIdx
                 ? jobs[activeJobIdx].bgColorClass
-                : "bg-gray-400"
+                : 'bg-gray-400'
             } w-2 h-2 rounded-full cursor-pointer`}
           ></span>
         ))}

@@ -44,6 +44,7 @@ module.exports = {
         'nightowl-magenta': '#c792ea',
         'nightowl-yellow': '#addb67',
         'nightowl-border': '#1d3b53',
+        'purple-900': '#581c87',
       },
       animation: {
         blink: 'blink 1s linear infinite',
@@ -129,5 +130,4 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-
 }
