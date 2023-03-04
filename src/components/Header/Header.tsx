@@ -33,13 +33,15 @@ function Sidebar() {
       '-=0.5'
     )
 
-    tl.to(
-      bgRef.current,
-      {
-        opacity: 100,
+    gsap.to(bgRef.current, {
+      opacity: 100,
+      scrollTrigger: {
+        trigger: bgRef.current,
+        start: '600',
+        end: '700',
+        markers: true,
       },
-      '-=0.5'
-    )
+    })
   }, [])
 
   return (
