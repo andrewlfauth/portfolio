@@ -39,7 +39,6 @@ function Sidebar() {
         trigger: bgRef.current,
         start: '600',
         end: '700',
-        markers: true,
       },
     })
   }, [])
