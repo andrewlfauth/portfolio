@@ -3,7 +3,6 @@ import { gsap } from '../../utils/gsap'
 import { settings } from '../../stores/settings'
 import CursorToggle from './CursorToggle'
 import github from '../../assets/github.svg'
-import linkedin from '../../assets/linkedin.svg'
 import resume from '../../assets/resume.svg'
 import Nav from './Nav'
 
@@ -69,9 +68,12 @@ function Sidebar() {
           >
             <img src={github} alt="github" class=" md:w-8" />
           </a>
-          <button class="w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-primary">
-            <img src={resume} alt="" class="md:w-[28px]" />
-          </button>
+          <a
+            href="/resume.pdf"
+            class="w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-primary"
+          >
+            <img src={resume} alt="resume" class="md:w-[28px]" />
+          </a>
         </div>
       </div>
       <Nav />
