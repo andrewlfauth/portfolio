@@ -2,30 +2,31 @@
 const { name, required, label, textarea } = Astro.props
 ---
 
-<div class='relative z-0'>
+<div class="relative z-0">
   {
     !textarea ? (
       <input
-        type='text'
+        type="text"
         id={name}
         name={name}
-        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 catppuccin:border-cat-text appearance-none focus:outline-none focus:ring-0 focus:border-mat-red catppuccin:focus:border-cat-bg nightowl:focus:border-nightowl-blue peer font-redhat'
-        placeholder=' '
+        class="block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 catppuccin:border-cat-text appearance-none focus:outline-none focus:ring-0 focus:border-mat-red catppuccin:focus:border-cat-bg nightowl:focus:border-nightowl-blue peer font-redhat"
+        placeholder=" "
         required={required}
       />
     ) : (
       <textarea
         rows={textarea.rows}
-        id='name'
-        name='name'
-        class='block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 catppuccin:border-cat-text appearance-none focus:outline-none focus:ring-0 focus:border-mat-red catppuccin:focus:border-cat-bg nightowl:focus:border-nightowl-blue peer font-redhat'
-        placeholder=' '
+        id={name}
+        name={name}
+        required={required}
+        class="block py-2.5 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 catppuccin:border-cat-text appearance-none focus:outline-none focus:ring-0 focus:border-mat-red catppuccin:focus:border-cat-bg nightowl:focus:border-nightowl-blue peer font-redhat"
+        placeholder=" "
       />
     )
   }
   <label
     for={name}
-    class='absolute text-lg text-type duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-mat-red catppuccin:peer-focus:text-cat-bg nightowl:peer-focus:text-nightowl-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6'
+    class="absolute text-lg text-type duration-300 transform -translate-y-6 scale-[.6] top-2 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-mat-red catppuccin:peer-focus:text-cat-bg nightowl:peer-focus:text-nightowl-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-[.6] peer-focus:-translate-y-6"
     >{label}</label
   >
 </div>

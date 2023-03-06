@@ -5,30 +5,39 @@ import MenuButton from '../Menu/MenuButton'
 ---
 
 <div
-  id='cta-container'
-  class='mt-72 relative flex flex-col items-center justify-center'
+  id="cta-container"
+  class="mt-72 relative flex flex-col items-center justify-center"
 >
-  <div id='cta-ufo' class='mx-auto w-fit pb-48'>
+  <div id="cta-ufo" class="mx-auto w-fit pb-48">
     <UFO />
   </div>
   <div
-    id='cta-form'
+    id="cta-form"
     style="transition: box-shadow 200ms;"
-    class='bg-neutral-800 catppuccin:bg-transparent nightowl:bg-nightowl-border w-5/6 md:w-[400px] p-6 rounded-md mx-auto space-y-8 pb-8 ring-[#ff3b5b] catppuccin:ring-pink-300 nightowl:ring-[#f77852]'
+    class="bg-neutral-800 catppuccin:bg-transparent nightowl:bg-nightowl-border w-5/6 md:w-[400px] p-6 rounded-md mx-auto space-y-8 pb-8 ring-[#ff3b5b] catppuccin:ring-pink-300 nightowl:ring-[#f77852]"
   >
     <span
-      class='text-3xl font-bold tracking-tight text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-blue mb-10'
+      class="text-3xl font-bold tracking-tight text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-blue mb-10"
       >Get in touch</span
     >
-    <form action='post' class='space-y-8' data-netlify='true' id='CTA-form'>
-      <InputField name='name' label='Name' />
-      <InputField name='company' label='Company (optional)' />
-      <InputField name='contact' label='Email or Phone Number' />
-      <InputField name='message' label='Your message' textarea={{ rows: 6 }} />
+    <form action="post" class="space-y-8" data-netlify="true" id="CTA-form">
+      <InputField name="name" label="Name" required={true} />
+      <InputField name="company" label="Company (optional)" />
+      <InputField
+        name="contact"
+        label="Email or Phone Number"
+        required={true}
+      />
+      <InputField
+        name="message"
+        label="Your message"
+        required={true}
+        textarea={{ rows: 6 }}
+      />
       <MenuButton
-        type='submit'
-        text='Ship it'
-        className='hover:skew-y-2 float-right'
+        type="submit"
+        text="Ship it"
+        className="hover:skew-y-2 float-right"
       />
     </form>
   </div>
@@ -36,25 +45,28 @@ import MenuButton from '../Menu/MenuButton'
 
 <script>
   import { gsap } from '../../utils/gsap'
-  
-  const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const intersecting = entry.isIntersecting
-    if (intersecting) {
-      entry.target.classList.add('ring')
-    }
-  })
-}, {threshold: .2})
 
-observer.observe(document.getElementById("cta-form")!)
-  
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const intersecting = entry.isIntersecting
+        if (intersecting) {
+          entry.target.classList.add('ring')
+        }
+      })
+    },
+    { threshold: 0.2 }
+  )
+
+  observer.observe(document.getElementById('cta-form')!)
+
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#cta-ufo',
       start: 'top bottom',
       end: 'top 10%',
       scrub: 2,
-      once: true
+      once: true,
     },
   })
   tl.from('#cta-ufo', {
@@ -62,9 +74,8 @@ observer.observe(document.getElementById("cta-form")!)
     x: 100,
     scale: 0,
     opacity: 0,
-    
   })
-  tl.from("#cta-form", {y: 200,})
+  tl.from('#cta-form', { y: 200 })
   gsap.to('.light', {
     opacity: 1,
     scrollTrigger: {
@@ -73,5 +84,4 @@ observer.observe(document.getElementById("cta-form")!)
       scrub: true,
     },
   })
-
 </script>
