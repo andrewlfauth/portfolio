@@ -7,27 +7,15 @@ const cursorStyles = [
   },
   {
     id: 1,
-    state: { custom: true, style: 'catppuccin' },
-    border: 'border-cat-blue',
-    bg: 'bg-cat-pink',
-  },
-  // {
-  //   id: 3,
-  //   state: { custom: true, style: 'cobalt' },
-  //   border: 'border-cobalt-blue',
-  //   bg: 'bg-cobalt-yellow',
-  // },
-  // {
-  //   id: 4,
-  //   state: { custom: true, style: 'red' },
-  //   border: 'border-slate-700',
-  //   bg: 'bg-red-600',
-  // },
-  {
-    id: 2,
     state: { custom: true, style: 'nightowl' },
     border: 'border-nightowl-orange',
     bg: 'bg-nightowl-blue',
+  },
+  {
+    id: 2,
+    state: { custom: true, style: 'catppuccin' },
+    border: 'border-cat-blue',
+    bg: 'bg-cat-pink',
   },
   {
     id: 3,
