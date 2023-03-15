@@ -20,7 +20,16 @@ import MenuButton from '../Menu/MenuButton'
       class="text-3xl font-bold tracking-tight text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-blue mb-10"
       >Get in touch</span
     >
-    <form action="post" class="space-y-8" data-netlify="true" id="CTA-form">
+    <form
+      action="post"
+      class="space-y-8"
+      data-netlify="true"
+      netlify-honeypot="location"
+      id="CTA-form"
+    >
+      <p class="hidden">
+        <input name="location" />
+      </p>
       <InputField name="name" label="Name" required={true} />
       <InputField name="company" label="Company (optional)" />
       <InputField

@@ -6,9 +6,13 @@ import MenuButton from './Menu/MenuButton'
 <form
   method="post"
   data-netlify="true"
+  netlify-honeypot="location"
   id="contact-form"
   class="p-10 h-full w-full lg:w-[400px] bg-neutral-800 catppuccin:bg-cat-border nightowl:bg-nightowl-border fixed left-0 top-0 z-50 duration-300 flex flex-col font-inter -translate-x-full"
 >
+  <p class="hidden">
+    <input name="location" />
+  </p>
   <svg
     id="close-btn"
     class="absolute top-4 right-4 fill-mat-red catppuccin:fill-cat-pink nightowl:fill-nightowl-orange w-6 hover:scale-110 duration-100"
