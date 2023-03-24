@@ -120,16 +120,16 @@ function Nav() {
             }}
             className="text-type text-2xl"
           >
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
           <li onClick={() => setOpenMenu(false)} className="text-type text-2xl">
-            <a href="#projects-start">Projects</a>
+            <a href="/#projects-start">Projects</a>
           </li>
           <li onClick={() => setOpenMenu(false)} className="text-type text-2xl">
-            <a href="#bio">Bio</a>
+            <a href="/#bio">Bio</a>
           </li>
           <li onClick={() => setOpenMenu(false)} className="text-type text-2xl">
-            <a href="#freelance">Freelance</a>
+            <a href="/#freelance">Freelance</a>
           </li>
         </ul>
         <div className="mt-20 space-y-6">
