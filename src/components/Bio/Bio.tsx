@@ -6,7 +6,7 @@ function Bio() {
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <div id="bio" className="pt-60 px-4 sm:px-6">
+    <div id="bio" className="pt-52 lg:pt-60 px-4 sm:px-6">
       <h2 className="font-redhat text-4xl md:text-5xl text-title text-center mb-14 md:mb-24">
         Bio
       </h2>

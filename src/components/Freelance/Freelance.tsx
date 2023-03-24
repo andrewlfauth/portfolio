@@ -62,32 +62,32 @@ function Freelance() {
   )
 
   return (
-    <div id='freelance' className='pt-60 px-4 sm:px-6'>
-      <div className='pb-16'>
-        <h2 className='font-redhat text-4xl md:text-5xl text-title text-center pb-2'>
+    <div id="freelance" className="pt-0 lg:pt-52 px-4 sm:px-6">
+      <div className="pb-16">
+        <h2 className="font-redhat text-4xl md:text-5xl text-title text-center pb-2">
           Freelance Work
         </h2>
         <button
           onClick={() => setOpenModal(true)}
-          className='mx-auto outline-none rounded-md text-center block font-semibold text-gray-300 catppuccin:text-cat-overlay nightowl:text-nightowl-text'
+          className="mx-auto outline-none rounded-md text-center block font-semibold text-gray-300 catppuccin:text-cat-overlay nightowl:text-nightowl-text"
         >
           Learn More
         </button>
       </div>
 
-      <div className='flex justify-center space-x-2 md:space-x-4'>
+      <div className="flex justify-center space-x-2 md:space-x-4">
         <img
           src={jobs[activeJobIdx].mobileImageSrc}
-          alt='job mobile view'
-          className='h-40 md:h-72 lg:h-[400px] rounded-lg'
+          alt="job mobile view"
+          className="h-40 md:h-72 lg:h-[400px] rounded-lg"
         />
         <img
           src={jobs[activeJobIdx].desktopImageSrc}
-          alt='job desktop view'
-          className='h-40 md:h-72 lg:h-[400px] rounded-lg'
+          alt="job desktop view"
+          className="h-40 md:h-72 lg:h-[400px] rounded-lg"
         />
       </div>
-      <div className='flex space-x-2 mt-4 mx-auto w-fit'>
+      <div className="flex space-x-2 mt-4 mx-auto w-fit">
         {jobs.map((_, i) => (
           <span
             onClick={() => setActiveJobIdx(i)}
