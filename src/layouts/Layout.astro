@@ -10,25 +10,29 @@ const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/src/assets/favicon.png' />
-    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="My portfolio showcases expertise in modern front-end frameworks, delivering exceptional user experiences that engage and inspire."
+    />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      rel='preconnect'
-      href='https://fonts.gstatic.com'
-      crossorigin='true'
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="true"
     />
     <link
-      href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Red+Hat+Mono:wght@200;300;500&display=swap'
-      rel='stylesheet'
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Red+Hat+Mono:wght@200;300;500&display=swap"
+      rel="stylesheet"
     />
-    <meta name='generator' content={Astro.generator} />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class='bg-primary cursor-none overflow-x-hidden scroller-smooth'>
+  <body class="bg-primary cursor-none overflow-x-hidden scroller-smooth">
     <CustomCursor client:only />
     <Header client:only />
     <ContactForm />
