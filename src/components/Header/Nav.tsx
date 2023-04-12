@@ -68,7 +68,7 @@ function Nav() {
         />
         <NavLink
           href="/#projects-start"
-          text="Projects"
+          text="Apps"
           section="projects"
           activeSection={activeSection}
         />
@@ -123,7 +123,7 @@ function Nav() {
             <a href="/">Home</a>
           </li>
           <li onClick={() => setOpenMenu(false)} className="text-type text-2xl">
-            <a href="/#projects-start">Projects</a>
+            <a href="/#projects-start">Apps</a>
           </li>
           <li onClick={() => setOpenMenu(false)} className="text-type text-2xl">
             <a href="/#bio">Bio</a>
