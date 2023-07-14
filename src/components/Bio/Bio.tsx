@@ -7,20 +7,15 @@ function Bio() {
 
   return (
     <div id="bio" className="pt-52 lg:pt-60 px-4 sm:px-6">
-      <h2 className="font-redhat text-4xl md:text-5xl text-title text-center mb-14 md:mb-24">
+      <h2 className="font-redhat text-4xl md:text-5xl text-title text-center mb-6 md:mb-8">
         Bio
       </h2>
-      <div className="text-type md:text-2xl lg:text-3xl font-medium max-w-4xl mx-auto text-center">
-        <p className="mb-6">
-          Became interested in coding through digital marketing and SEO
-        </p>
-        <p className="mb-6">
-          Enjoys the challenge of creating complex UI logic
-        </p>
-        <p className="mb-6">Free time is spent around friends and family</p>
+      <div className="text-type md:text-2xl lg:text-3xl max-w-4xl mx-auto text-center space-y-2 md:space-y-4 lg:space-y-6">
+        <p>Enjoys the challenge of creating complex UI logic.</p>
+        <p>Free time is spent with friends and family.</p>
 
         <div className="mx-auto lg:mx-0 w-fit min-h-[392px] md:min-h-[412px]">
-          <span className="text-gray-400 text-sm md:text-lg mt-16 md:mt-20 mb-4 block text-left">
+          <span className="text-gray-400 text-sm md:text-lg mt-12 md:mt-20 mb-4 block text-left">
             Technology skills
           </span>
           <Skills
