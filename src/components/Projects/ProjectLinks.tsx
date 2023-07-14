@@ -14,7 +14,7 @@ function ProjectLinks({ repo, site }: Props) {
           className="flex lg:border-2 border-primary hover:border-mat-blue hover:catppuccin:border-cat-pink hover:nightowl:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100"
         >
           <Unlock />
-          <span className="ml-2 text-xs md:text-base">Public Repo</span>
+          <span className="ml-2 text-xs md:text-base">View repo</span>
         </a>
       )}
       {site && (
@@ -25,7 +25,7 @@ function ProjectLinks({ repo, site }: Props) {
           className="flex lg:border-2 border-primary hover:border-mat-blue hover:catppuccin:border-cat-pink hover:nightowl:border-nightowl-blue rounded-full pr-3 pl-3 py-1 items-center text-gray-100"
         >
           <Eye />
-          <span className="ml-2 text-xs md:text-base">Live Site</span>
+          <span className="ml-2 text-xs md:text-base">View live site</span>
         </a>
       )}
     </div>

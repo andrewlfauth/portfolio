@@ -10,7 +10,7 @@ function Bio() {
       <h2 className="font-redhat text-4xl md:text-5xl text-title text-center mb-6 md:mb-8">
         Bio
       </h2>
-      <div className="text-type md:text-2xl lg:text-3xl max-w-4xl mx-auto text-center space-y-2 md:space-y-4 lg:space-y-6">
+      <div className="text-type text-sm md:text-2xl lg:text-3xl max-w-4xl mx-auto text-center space-y-2 md:space-y-4 lg:space-y-6">
         <p>Enjoys the challenge of creating complex UI logic.</p>
         <p>Free time is spent with friends and family.</p>
 
