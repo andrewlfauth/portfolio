@@ -1,25 +1,25 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Sparks from "../components/Sparks.astro"
-import Hero from "../components/Hero.astro"
-import Screentime from "../components/Screentime"
-import MetaCompare from "../components/MetaCompare"
-import Cribbage from "../components/Cribbage"
-import CTA from "../components/CTA/CTA.astro"
-import Bio from "../components/Bio/Bio"
-import Freelance from "../components/Freelance"
+import Layout from '../layouts/Layout.astro'
+import Sparks from '../components/Sparks.astro'
+import Hero from '../components/Hero.astro'
+import Screentime from '../components/Screentime'
+import MetaCompare from '../components/MetaCompare'
+import Cribbage from '../components/Cribbage'
+import CTA from '../components/CTA/CTA.astro'
+import Bio from '../components/Bio/Bio'
+import Freelance from '../components/Freelance'
 ---
 
-<Layout title='Andrew Fauth'>
+<Layout title="Andrew Fauth">
   <main>
     <Sparks />
     <Hero />
-    <Screentime client:visible />
     <MetaCompare client:visible />
     <Cribbage client:visible />
+    <Screentime client:visible />
     <Bio client:visible />
     <Freelance client:visible />
     <CTA />
-    <div class='pt-32'></div>
+    <div class="pt-32"></div>
   </main>
 </Layout>
