@@ -4,15 +4,12 @@ import ProjectLinks from '../Projects/ProjectLinks'
 import { gsap } from '../../utils/gsap'
 import Tabs from '../Projects/Tabs'
 import {
-  Cheerio,
   Firebase,
-  Jotai,
   Openai,
   React,
   Remix,
   Stripe,
   Tailwind,
-  Typescript,
 } from '../Projects/TechCards'
 import Features from '../Projects/Features'
 import About from '../Projects/About'
@@ -54,23 +51,23 @@ function MetaCompare() {
         id: 1,
       },
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315283/portfolio/sitescout-dashboard.png',
-        alt: 'Site Scout app dashboard',
-        id: 2,
-      },
-      {
         src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315319/portfolio/sitescout-keywords.png',
         alt: 'Site Scout keyword generation',
-        id: 3,
+        id: 2,
       },
       {
         src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315356/portfolio/sitescout-feature.png',
         alt: 'Site Scout AI features',
-        id: 4,
+        id: 3,
       },
       {
         src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315413/portfolio/sitescout-meta.png',
         alt: 'Site Scout meta tags manager',
+        id: 4,
+      },
+      {
+        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315475/portfolio/sitescout-social-previewer.png',
+        alt: 'Site Scout social previewer',
         id: 5,
       },
       {
@@ -79,14 +76,9 @@ function MetaCompare() {
         id: 6,
       },
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315475/portfolio/sitescout-social-previewer.png',
-        alt: 'Site Scout social previewer',
-        id: 7,
-      },
-      {
         src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315521/portfolio/sitescout-images.png',
         alt: 'Site Scout image previewer',
-        id: 8,
+        id: 7,
       },
     ],
     []
