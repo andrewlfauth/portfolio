@@ -5,12 +5,12 @@ interface Props {
 
 function Tabs({ tab, setTab }: Props) {
   return (
-    <div class='mx-auto w-fit md:text-lg font-redhat flex space-x-4'>
+    <div class="mx-auto w-fit md:text-lg font-redhat flex space-x-4">
       <span
         onClick={() => setTab('screenshots')}
         className={`${
-          tab === 'screenshots'
-            ? 'text-mat-red catppuccin:text-cat-green nightowl:text-nightowl-orange'
+          tab == 'screenshots'
+            ? 'text-mat-red catppuccin:text-cat-green nightowl:text-nightowl-orange border-b-2 border-mat-red catppuccin:border-cat-green nightowl:border-nightowl-orange'
             : 'text-gray-300 catppuccin:text-cat-overlay nightowl:text-nightowl-text'
         } cursor-pointer`}
       >
@@ -20,7 +20,7 @@ function Tabs({ tab, setTab }: Props) {
         onClick={() => setTab('features')}
         className={`${
           tab === 'features'
-            ? 'text-mat-red catppuccin:text-cat-green nightowl:text-nightowl-orange'
+            ? 'text-mat-red catppuccin:text-cat-green nightowl:text-nightowl-orange border-b-2 border-mat-red catppuccin:border-cat-green nightowl:border-nightowl-orange'
             : 'text-gray-300 catppuccin:text-cat-overlay nightowl:text-nightowl-text'
         } cursor-pointer`}
       >
@@ -30,7 +30,7 @@ function Tabs({ tab, setTab }: Props) {
         onClick={() => setTab('about')}
         className={`${
           tab === 'about'
-            ? 'text-mat-red catppuccin:text-cat-green nightowl:text-nightowl-orange'
+            ? 'text-mat-red catppuccin:text-cat-green nightowl:text-nightowl-orange border-b-2 border-mat-red catppuccin:border-cat-green nightowl:border-nightowl-orange'
             : 'text-gray-300 catppuccin:text-cat-overlay nightowl:text-nightowl-text'
         } cursor-pointer`}
       >
