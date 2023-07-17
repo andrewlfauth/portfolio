@@ -62,7 +62,7 @@ function Screentime() {
   }, [])
 
   return (
-    <div id="projects-start" class="pt-60">
+    <div class="pt-60">
       <div className="pb-6 md:pb-8 lg:pb-16">
         <h2 className="font-redhat text-4xl md:text-5xl text-title text-center pb-2">
           Screen Time
