@@ -33,7 +33,7 @@ function MetaCompare() {
 
   const about = [
     "Site Scout is a web app that empowers website owners to effortlessly improve their site's on-page SEO without having to spend thousands hiring a professional.",
-    "Anybody can easily track and manage key SEO elements on their webpage's while being alerted to performance impacting issues and receiving actionable fixes.",
+    'Anybody can easily track and manage key SEO elements on their webpages while being alerted to performance impacting issues and receiving actionable fixes.',
     'The app uses AI to deeply analyze each webpage and write content, suggest fixes, generate relevant keywords, and more to make boosting SEO a breeze.',
     'This app uses a freemium pricing model with a premium plan at $10 a month. The premium plan unlocks the AI features, however free accounts can still access several awesome tools while getting 25 free trial AI executions.',
   ]
