@@ -87,7 +87,7 @@ function Freelance() {
   )
 
   return (
-    <div id="freelance" className="pt-0 lg:pt-52 px-4 sm:px-6">
+    <div id="freelance" className="px-4 sm:px-6">
       <div className="pb-8 md:pb-16">
         <h2 className="font-redhat text-4xl md:text-5xl text-title text-center pb-2">
           Freelance Work
