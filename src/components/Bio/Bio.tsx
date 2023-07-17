@@ -20,8 +20,8 @@ function Bio() {
         <p>Free time is spent with friends and family.</p>
 
         <div className="mx-auto lg:mx-0 w-fit min-h-[392px] md:min-h-[412px]">
-          <span className="text-gray-400 text-sm md:text-lg mt-12 md:mt-20 mb-4 block text-left">
-            Technology skills
+          <span className="text-gray-100 font-redhat text-sm md:text-lg mt-12 md:mt-20 mb-4 block text-left">
+            Primary technologies
           </span>
           <Skills
             showMore={showMore}
