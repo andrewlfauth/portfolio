@@ -4,9 +4,12 @@ import JobsModal from './JobsModal'
 
 function Freelance() {
   const [activeJobIdx, setActiveJobIdx] = useState(0)
+  const [touchStart, setTouchStart] = useState<number>(0)
+  const [touchEnd, setTouchEnd] = useState<number>(0)
   const [openModal, setOpenModal] = useState(false)
 
   let intervalRef = useRef<any>(null)
+  const minSwipeDistance = 50
 
   const jobs = useMemo(
     () => [
@@ -57,6 +60,28 @@ function Freelance() {
     }
   }, [activeJobIdx])
 
+  const onTouchStart = (e: TouchEvent) => {
+    setTouchEnd(0)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+  const onTouchMove = (e: TouchEvent) => setTouchEnd(e.targetTouches[0].clientX)
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+    if (isRightSwipe) {
+      activeJobIdx == 0
+        ? setActiveJobIdx(jobs.length - 1)
+        : setActiveJobIdx(activeJobIdx - 1)
+    }
+    if (isLeftSwipe) {
+      activeJobIdx == jobs.length - 1
+        ? setActiveJobIdx(0)
+        : setActiveJobIdx(activeJobIdx + 1)
+    }
+  }
+
   const _ = clsx(
     'bg-green-400 bg-emerald-600 bg-purple-400 border-green-400 border-purple-400 border-green-400'
   )
@@ -75,7 +100,12 @@ function Freelance() {
         </button>
       </div>
 
-      <div className="flex justify-center space-x-2 md:space-x-4">
+      <div
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onTouchMove={onTouchMove}
+        className="flex justify-center space-x-2 md:space-x-4"
+      >
         <img
           src={jobs[activeJobIdx].mobileImageSrc}
           alt="job mobile view"
