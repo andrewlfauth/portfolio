@@ -16,10 +16,15 @@ import MenuButton from '../Menu/MenuButton'
     style="transition: box-shadow 200ms;"
     class="bg-neutral-800 catppuccin:bg-transparent nightowl:bg-nightowl-border w-5/6 md:w-[400px] p-6 rounded-md mx-auto space-y-8 pb-8 ring-[#ff3b5b] catppuccin:ring-pink-300 nightowl:ring-[#f77852]"
   >
-    <span
-      class="text-3xl font-bold tracking-tight text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-blue mb-10"
-      >Get in touch</span
-    >
+    <div>
+      <span
+        class="text-3xl font-bold tracking-tight text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-blue block"
+        >Get in touch</span
+      >
+      <span class="text-xs mt-1 tracking-tight text-type mb-10 block">
+        * Indicates required field</span
+      >
+    </div>
     <form
       action="post"
       class="space-y-8"
@@ -31,12 +36,13 @@ import MenuButton from '../Menu/MenuButton'
         <input name="location" />
       </p>
       <InputField name="name" label="Name" required={true} />
-      <InputField name="company" label="Company (optional)" />
       <InputField
         name="contact"
-        label="Email or Phone Number"
+        label="Email address"
+        type="email"
         required={true}
       />
+      <InputField name="company" label="Company (optional)" />
       <InputField
         name="message"
         label="Your message"
