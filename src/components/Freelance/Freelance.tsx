@@ -107,11 +107,13 @@ function Freelance() {
         className="flex justify-center space-x-2 md:space-x-4"
       >
         <img
+          loading="lazy"
           src={jobs[activeJobIdx].mobileImageSrc}
           alt="job mobile view"
           className="h-40 md:h-72 lg:h-[400px] rounded-lg"
         />
         <img
+          loading="lazy"
           src={jobs[activeJobIdx].desktopImageSrc}
           alt="job desktop view"
           className="h-40 md:h-72 lg:h-[400px] rounded-lg"

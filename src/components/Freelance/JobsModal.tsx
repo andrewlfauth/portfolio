@@ -53,6 +53,7 @@ function JobsModal({
             className="hover:bg-neutral-300 duration-150 h-20 flex items-center rounded-t-md pl-5"
           >
             <img
+              loading="lazy"
               src="https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677559574/portfolio/avrglow-logo.png"
               alt="avrglow logo"
               className="w-44"
@@ -63,6 +64,7 @@ function JobsModal({
             className="hover:bg-neutral-300 duration-150 h-20 flex items-center border-y-2 border-neutral-900 catppuccin:border-cat-bg nightowl:border-nightowl-bg"
           >
             <img
+              loading="lazy"
               src="https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677559616/portfolio/wells-logo.png"
               alt="Wells Landscaping logo"
               className="scale-[.6] -ml-8"
@@ -73,6 +75,7 @@ function JobsModal({
             className="hover:bg-neutral-300 duration-150 h-20 flex items-center rounded-b-md"
           >
             <img
+              loading="lazy"
               src="https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677559473/portfolio/ssc-logo.png"
               alt="Southern Spring Cleaners logo"
               className="scale-[.8] -ml-6"

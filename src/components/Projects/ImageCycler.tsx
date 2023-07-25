@@ -49,6 +49,7 @@ function ImageCycler({
   return (
     <div className="flex flex-col items-center">
       <img
+        loading="lazy"
         ref={imgRef}
         className={className}
         onTouchStart={onTouchStart}
