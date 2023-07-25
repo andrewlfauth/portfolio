@@ -41,42 +41,42 @@ function MetaCompare() {
   const images = useMemo(
     () => [
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689314572/portfolio/site-scout-hero.png',
+        src: 'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690319667/portfolio/sitescout-hero_fz5juj.png',
         alt: 'Site Scout landing page hero',
         id: 0,
       },
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315283/portfolio/sitescout-dashboard.png',
+        src: 'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690327071/portfolio/site-scout-dashboard_djqaus.png',
         alt: 'Site Scout app dashboard',
         id: 1,
       },
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315319/portfolio/sitescout-keywords.png',
+        src: 'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690327371/portfolio/site-scout-keywords_rquno0.png',
         alt: 'Site Scout keyword generation',
         id: 2,
       },
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315356/portfolio/sitescout-feature.png',
+        src: 'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690326779/portfolio/image_71_nj5coh.png',
         alt: 'Site Scout AI features',
         id: 3,
       },
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315413/portfolio/sitescout-meta.png',
+        src: 'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690326998/portfolio/site-scout-meta-data_d72vq1.png',
         alt: 'Site Scout meta tags manager',
         id: 4,
       },
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315475/portfolio/sitescout-social-previewer.png',
+        src: 'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690319550/portfolio/image_65_quf9r5.png',
         alt: 'Site Scout social previewer',
         id: 5,
       },
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315440/portfolio/sitescout-pricing.png',
+        src: 'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690327426/portfolio/site-scout-pricing_pmojzm.png',
         alt: 'Site Scout pricing page',
         id: 6,
       },
       {
-        src: 'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1689315521/portfolio/sitescout-images.png',
+        src: 'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690326929/portfolio/site-scout-images_lhumwe.png',
         alt: 'Site Scout image previewer',
         id: 7,
       },

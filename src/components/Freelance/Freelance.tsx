@@ -17,9 +17,9 @@ function Freelance() {
         name: 'AVRGLOW Beats',
         href: '/freelance/avarglow-beats',
         desktopImageSrc:
-          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531097/portfolio/avrglow-dt.png',
+          'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690326409/portfolio/avrglow-dt_cywgy2.png',
         mobileImageSrc:
-          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531100/portfolio/avrglow-mb.png',
+          'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690326842/portfolio/avrglow-mb_ejqkis.png',
         bgColorClass: 'bg-green-400',
         borderColorClass: 'border-green-400',
       },
@@ -27,9 +27,9 @@ function Freelance() {
         name: 'Wells Landscaping',
         href: '/freelance/wells-landscaping',
         desktopImageSrc:
-          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531644/portfolio/wells-dt.png',
+          'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690310950/portfolio/wells-dt_tjzc8s.png',
         mobileImageSrc:
-          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677531701/portfolio/wells-mb.png',
+          'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690310962/portfolio/wells-mb_rpsyem.png',
         bgColorClass: 'bg-emerald-600',
         borderColorClass: 'border-emerald-600',
       },
@@ -37,9 +37,9 @@ function Freelance() {
         name: 'Southern Spring Cleaners',
         href: '/freelance/southern-spring-cleaners',
         desktopImageSrc:
-          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677892142/portfolio/ssc-dt1.png',
+          'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690310969/portfolio/ssc-dt_folxuy.png',
         mobileImageSrc:
-          'https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677892396/portfolio/ssc-mb1.png',
+          'https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,g_auto/v1690310966/portfolio/ssc-mb_dirssa.png',
         bgColorClass: 'bg-purple-400',
         borderColorClass: 'border-purple-400',
       },
