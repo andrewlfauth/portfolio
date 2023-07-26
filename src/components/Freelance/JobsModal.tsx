@@ -65,7 +65,7 @@ function JobsModal({
           >
             <img
               loading="lazy"
-              src="https://res.cloudinary.com/recovery-ocean/image/upload/v1690362158/f_auto,q_auto/portfolio/wells-logo_om9mll.png"
+              src="https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,q_auto/v1690362158/portfolio/wells-logo_om9mll.png"
               alt="Wells Landscaping logo"
               className="scale-[.6] -ml-8"
             />
