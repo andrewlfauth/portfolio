@@ -54,7 +54,7 @@ function JobsModal({
           >
             <img
               loading="lazy"
-              src="https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677559574/portfolio/avrglow-logo.png"
+              src="https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,q_auto/v1690359863/portfolio/avrglow-logo_bibnwx.png"
               alt="avrglow logo"
               className="w-44"
             />
@@ -65,7 +65,7 @@ function JobsModal({
           >
             <img
               loading="lazy"
-              src="https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677559616/portfolio/wells-logo.png"
+              src="https://res.cloudinary.com/recovery-ocean/image/upload/v1690362158/f_auto,q_auto/portfolio/wells-logo_om9mll.png"
               alt="Wells Landscaping logo"
               className="scale-[.6] -ml-8"
             />
@@ -76,7 +76,7 @@ function JobsModal({
           >
             <img
               loading="lazy"
-              src="https://res.cloudinary.com/dpnkrz8c8/image/upload/v1677559473/portfolio/ssc-logo.png"
+              src="https://res.cloudinary.com/recovery-ocean/image/upload/f_auto,q_auto/v1690361581/portfolio/ssc-logo_bihzvi.png"
               alt="Southern Spring Cleaners logo"
               className="scale-[.8] -ml-6"
             />
