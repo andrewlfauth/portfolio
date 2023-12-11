@@ -62,27 +62,26 @@ function Nav() {
         <NavLink
           href="/#"
           text="Home"
-          handleClick={scrollToTop}
-          section="home"
-          activeSection={activeSection}
+          isActive={
+            activeSection == 'home' &&
+            !window.location.pathname.startsWith('/blog')
+          }
         />
         <NavLink
           href="/#projects-start"
           text="Apps"
-          section="projects"
-          activeSection={activeSection}
+          isActive={activeSection == 'projects'}
         />
-        <NavLink
-          href="/#bio"
-          text="Bio"
-          section="bio"
-          activeSection={activeSection}
-        />
+        <NavLink href="/#bio" text="Bio" isActive={activeSection == 'bio'} />
         <NavLink
           href="/#freelance"
           text="Freelance"
-          section="freelance"
-          activeSection={activeSection}
+          isActive={activeSection == 'freelance'}
+        />
+        <NavLink
+          href="/blog"
+          text="Blog"
+          isActive={window.location.pathname.startsWith('/blog')}
         />
       </ul>
 
@@ -130,6 +129,9 @@ function Nav() {
           </li>
           <li onClick={() => setOpenMenu(false)} className="text-type text-2xl">
             <a href="/#freelance">Freelance</a>
+          </li>
+          <li onClick={() => setOpenMenu(false)} className="text-type text-2xl">
+            <a href="/blog">Blog</a>
           </li>
         </ul>
         <div className="mt-20 space-y-6">
