@@ -16,4 +16,11 @@ export default defineConfig({
     }),
     preact(),
   ],
+  markdown: {
+    shikiConfig: {
+      theme: 'css-variables',
+      langs: [],
+      wrap: true,
+    },
+  },
 })

@@ -2,6 +2,53 @@
 @tailwind utilities;
 @tailwind components;
 
+@layer base {
+  /* themes for syntax highlighting */
+  :root {
+    --astro-code-color-text: #eeffff;
+    --astro-code-color-background: #212121;
+    --astro-code-token-constant: #89ddff;
+    --astro-code-token-string: #c3e88d;
+    --astro-code-token-comment: #545454;
+    --astro-code-token-keyword: #c792ea;
+    --astro-code-token-parameter: #eeffff;
+    --astro-code-token-function: #82aaff;
+    --astro-code-token-string-expression: #89ddff;
+    --astro-code-token-punctuation: #c792ea;
+    --astro-code-token-link: #80cbc4;
+  }
+  .nightowl {
+    --astro-code-color-background: #0b1f30;
+  }
+  .catppuccin {
+    --astro-code-color-text: #a6accd;
+    --astro-code-color-background: #292d3e;
+    --astro-code-token-constant: #ff9cac;
+    --astro-code-token-string: #c3e88d;
+    --astro-code-token-comment: #676e95;
+    --astro-code-token-keyword: #89ddff;
+    --astro-code-token-parameter: #a6accd;
+    --astro-code-token-function: #82aaff;
+    --astro-code-token-string-expression: #f78c6c;
+    --astro-code-token-punctuation: #89ddff;
+    --astro-code-token-link: #a6accd;
+  }
+
+  /* styles for code blocks */
+  pre {
+    padding: 16px 16px;
+    overflow: auto;
+    border-radius: 4px;
+  }
+  code {
+    padding: 4px;
+    border-radius: 4px;
+  }
+  pre > code {
+    padding: 0;
+  }
+}
+
 @layer components {
   .hamburger-open {
     transform: rotate(-180deg);
@@ -15,27 +62,45 @@
 
   #sparks span {
     background-color: #56b5c29c;
-    box-shadow: 0 0 0 10px #032e3844, 0 0 30px #0e6c81, 0 0 100px #0b3a77;
+    box-shadow:
+      0 0 0 10px #032e3844,
+      0 0 30px #0e6c81,
+      0 0 100px #0b3a77;
   }
   #sparks span:nth-child(even) {
     background-color: #cf63e79d;
-    box-shadow: 0 0 0 10px #57082344, 0 0 50px #8f1385, 0 0 100px #700a74;
+    box-shadow:
+      0 0 0 10px #57082344,
+      0 0 50px #8f1385,
+      0 0 100px #700a74;
   }
   .catppuccin #sparks span {
     background-color: #8aadf496;
-    box-shadow: 0 0 0 10px #032e3844, 0 0 30px #0e6c81, 0 0 100px #0b3a77;
+    box-shadow:
+      0 0 0 10px #032e3844,
+      0 0 30px #0e6c81,
+      0 0 100px #0b3a77;
   }
   .catppuccin #sparks span:nth-child(even) {
     background-color: #f5bde656;
-    box-shadow: 0 0 0 10px #57082344, 0 0 50px #8f1385, 0 0 100px #700a74;
+    box-shadow:
+      0 0 0 10px #57082344,
+      0 0 50px #8f1385,
+      0 0 100px #700a74;
   }
   .nightowl #sparks span {
     background-color: #82aaff8c;
-    box-shadow: 0 0 0 10px #032e3844, 0 0 30px #0e6c81, 0 0 100px #0b3a77;
+    box-shadow:
+      0 0 0 10px #032e3844,
+      0 0 30px #0e6c81,
+      0 0 100px #0b3a77;
   }
   .nightowl #sparks span:nth-child(even) {
     background-color: #f78c6c;
-    box-shadow: 0 0 0 10px #57082344, 0 0 50px #8f1385, 0 0 100px #700a74;
+    box-shadow:
+      0 0 0 10px #57082344,
+      0 0 50px #8f1385,
+      0 0 100px #700a74;
   }
 }
 
