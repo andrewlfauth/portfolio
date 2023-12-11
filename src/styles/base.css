@@ -6,7 +6,7 @@
   /* themes for syntax highlighting */
   :root {
     --astro-code-color-text: #eeffff;
-    --astro-code-color-background: #212121;
+    --astro-code-color-background: #262626;
     --astro-code-token-constant: #89ddff;
     --astro-code-token-string: #c3e88d;
     --astro-code-token-comment: #545454;
