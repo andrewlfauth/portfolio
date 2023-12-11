@@ -126,7 +126,7 @@ module.exports = {
       },
     },
   },
-  plugins: [customVariants],
+  plugins: [customVariants, require('@tailwindcss/typography')],
   future: {
     hoverOnlyWhenSupported: true,
   },
