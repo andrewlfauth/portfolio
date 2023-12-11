@@ -1,0 +1,46 @@
+---
+import '../styles/base.css'
+import ContactForm from '../components/ContactForm.astro'
+import CustomCursor from '../components/CustomCursor'
+import Header from '../components/Header'
+import ThemeScript from '../scripts/ThemeScript.astro'
+import GiscusScript from '../scripts/GiscusScript.astro'
+export interface Props {
+  title: string
+  description: string
+}
+const { frontmatter } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={frontmatter.description} />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="true"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Red+Hat+Mono:wght@200;300;500&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body class="bg-primary overflow-x-hidden scroller-smooth">
+    <Header client:only />
+    <ContactForm />
+    <main class="text-white max-w-3xl mx-auto">
+      <slot />
+      <section class="giscus"></section>
+    </main>
+  </body>
+</html>
+
+<ThemeScript />
+<GiscusScript />
