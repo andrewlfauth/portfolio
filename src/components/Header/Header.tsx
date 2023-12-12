@@ -6,7 +6,7 @@ import github from '../../assets/github.svg'
 import resume from '../../assets/resume.svg'
 import Nav from './Nav'
 
-function Sidebar() {
+function Header({ isMinimal }: { isMinimal?: boolean }) {
   const btnsRef = useRef<HTMLDivElement>(null)
   const bgRef = useRef<HTMLDivElement>(null)
 
@@ -50,35 +50,37 @@ function Sidebar() {
           className="absolute top-0 left-0 bg-red-500 w-full h-full bg-primary duration-1000 opacity-0"
         ></div>
         <CursorToggle />
-        <div
-          ref={btnsRef}
-          className="flex space-x-2 opacity-0 pointer-events-none translate-x-10"
-        >
-          <button
-            class="h-10 w-20 md:w-[156px] md:h-[52px] rounded-lg border-2 border-primary text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-orange text-sm md:text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] bg-primary"
-            onClick={openContactForm}
+        {!isMinimal && (
+          <div
+            ref={btnsRef}
+            className="flex space-x-2 opacity-0 pointer-events-none translate-x-10"
           >
-            contact
-          </button>
-          <a
-            href="https://github.com/andrewlfauth"
-            target="_blank"
-            rel="noreferrer"
-            class="w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary items-center justify-center select-none hover:scale-[1.02] hidden md:flex bg-primary"
-          >
-            <img src={github} alt="github" class=" md:w-8" />
-          </a>
-          <a
-            href="/resume.pdf"
-            class="w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-primary"
-          >
-            <img src={resume} alt="resume" class="md:w-[28px]" />
-          </a>
-        </div>
+            <button
+              class="h-10 w-20 md:w-[156px] md:h-[52px] rounded-lg border-2 border-primary text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-orange text-sm md:text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] bg-primary"
+              onClick={openContactForm}
+            >
+              contact
+            </button>
+            <a
+              href="https://github.com/andrewlfauth"
+              target="_blank"
+              rel="noreferrer"
+              class="w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary items-center justify-center select-none hover:scale-[1.02] hidden md:flex bg-primary"
+            >
+              <img src={github} alt="github" class=" md:w-8" />
+            </a>
+            <a
+              href="/resume.pdf"
+              class="w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-primary"
+            >
+              <img src={resume} alt="resume" class="md:w-[28px]" />
+            </a>
+          </div>
+        )}
       </div>
-      <Nav />
+      <Nav isMinimal={isMinimal} />
     </>
   )
 }
 
-export default Sidebar
+export default Header

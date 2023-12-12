@@ -7,7 +7,8 @@ import resume from '../../assets/resume.svg'
 
 type Section = 'home' | 'projects' | 'bio' | 'freelance'
 
-function Nav() {
+function Nav({ isMinimal }: { isMinimal?: boolean }) {
+  console.log(isMinimal)
   const [openMenu, setOpenMenu] = useState(false)
   const [activeSection, setActiveSection] = useState<Section>('home')
   const ioRef = useRef<any>(null)
@@ -67,17 +68,25 @@ function Nav() {
             !window.location.pathname.startsWith('/blog')
           }
         />
-        <NavLink
-          href="/#projects-start"
-          text="Apps"
-          isActive={activeSection == 'projects'}
-        />
-        <NavLink href="/#bio" text="Bio" isActive={activeSection == 'bio'} />
-        <NavLink
-          href="/#freelance"
-          text="Freelance"
-          isActive={activeSection == 'freelance'}
-        />
+        {!isMinimal && (
+          <>
+            <NavLink
+              href="/#projects-start"
+              text="Apps"
+              isActive={activeSection == 'projects'}
+            />
+            <NavLink
+              href="/#bio"
+              text="Bio"
+              isActive={activeSection == 'bio'}
+            />
+            <NavLink
+              href="/#freelance"
+              text="Freelance"
+              isActive={activeSection == 'freelance'}
+            />
+          </>
+        )}
         <NavLink
           href="/blog"
           text="Blog"
