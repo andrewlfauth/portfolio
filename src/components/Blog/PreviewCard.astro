@@ -1,0 +1,24 @@
+---
+const { path, title, description, author, imageUrl, tags } =
+  Astro.props
+---
+
+<a
+  href={`/blog/${path}`}
+  class="w-full flex bg-primary border border-primary ring-mat-red hover:border-mat-red hover:catppuccin:border-cat-pink hover:nightowl:border-nightowl-orange catppuccin:ring-cat-pink nightowl:ring-nightowl-orange rounded hover:ring-2 duration-100"
+>
+  <img class="rounded-l object-cover w-28 md:w-36 aspect-square" src={imageUrl} alt="" />
+  <div class="p-4 w-full h-full my-auto">
+    <h5 class="mb-2 text-sm md:text-xl lg:text-2xl font-bold text-title">
+      {title}
+    </h5>
+    <p class="mb-3 font-normal text-xs md:text-sm lg:text-base text-type">
+      {description}
+    </p>
+    <div class="flex text-xs md:text-sm mt-4 pt-3 border-t border-primary">
+      {tags.map((tag: string) => (
+        <p class="text-mat-red nightowl:text-nightowl-orange catppuccin:text-cat-pink mr-4">{tag}</p>
+      ))}
+    </div>
+  </div>
+</a>
