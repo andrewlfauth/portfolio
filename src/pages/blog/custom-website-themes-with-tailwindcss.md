@@ -105,11 +105,11 @@ module.exports = {
 }
 ```
 
-Now, we register our `customVariants` as a plugin within our config export. Great job! Now you can use your own custom themes with convient Tailwind variants.
+Now, we register our `customVariants` as a plugin within our config export. Great job! Now you can use your own custom themes with convenient Tailwind variants.
 
-In order for the variant styles to be applied we need to have the theme name as a class on the document somewhere. On this site clicking the button on the top-left allows you to select a color theme.
+In order for the variant styles to be applied we need to have the current theme as a class on the document somewhere. Also, you may want to provide a way for the user to switch between themes.
 
-When you select a theme, the classlist on the `html` element gets emptied and then the chosen theme is added as a class. For example, clicking the orange circle will change the theme to **nightowl**.
+On this site clicking the button on the top-left allows you to select a color theme. When you select a theme, the classlist on the `html` element gets emptied and then the chosen theme is added as a class. For example, clicking the orange circle will change the theme to **nightowl**.
 
 ```html
 <html class="nightowl">
