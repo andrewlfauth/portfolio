@@ -44,7 +44,11 @@ function Header({ isMinimal }: { isMinimal?: boolean }) {
 
   return (
     <>
-      <div className="flex fixed left-0 top-0 z-50 space-x-2 p-4 w-full">
+      <div
+        className={`flex fixed left-0 top-0 z-50 space-x-2 p-4 w-full ${
+          isMinimal ? 'bg-primary lg:bg-transparent' : ''
+        }`}
+      >
         <div
           ref={bgRef}
           className="absolute top-0 left-0 bg-red-500 w-full h-full bg-primary duration-1000 opacity-0"

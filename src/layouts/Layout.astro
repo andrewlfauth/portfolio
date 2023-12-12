@@ -37,8 +37,10 @@ const { title, description, image, isMinimal } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-primary cursor-none overflow-x-hidden scroller-smooth">
-    <CustomCursor client:only />
+  <body class={`bg-primary overflow-x-hidden scroller-smooth ${isMinimal ? "" : "cursor-none"}`}>
+    {!isMinimal &&
+      <CustomCursor client:only />
+    }
     <Header client:only isMinimal={isMinimal} />
     <ContactForm />
     <slot />
