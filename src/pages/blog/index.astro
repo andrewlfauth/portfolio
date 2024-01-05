@@ -4,23 +4,33 @@ import PreviewCard from '../../components/Blog/PreviewCard.astro'
 import posts from '../../components/Blog/posts.json'
 ---
 
-<Layout title="Blog by Andrew Fauth" description='Posts about modern web developent.' isMinimal={true}>
-  <main class="mt-24 md:mt-32 mx-auto md:max-w-2xl lg:max-w-3xl">
-    <h1 class="font-redhat text-2xl md:text-5xl text-title text-center">
+<Layout
+  title='Blog by Andrew Fauth'
+  description='Posts about modern web developent.'
+  isMinimal={true}
+>
+  <main class='mt-24 md:mt-32 mx-auto md:max-w-2xl lg:max-w-3xl'>
+    <h1 class='font-redhat text-2xl md:text-5xl text-title text-center'>
       Blog | Andrew Fauth
     </h1>
-    <p class="text-type mt-1.5 md:mt-4 text-center text-sm md:text-lg">Articles on modern web development</p>
-    <div class="flex flex-col gap-6 md:gap-10 items-center px-4 mt-12 md:mt-16">
-      {posts.map(post => (
-        <PreviewCard 
-          path={post.path}
-          title={post.title} 
-          description={post.description} 
-          imageUrl={post.imageUrl}
-          imageAlt={post.imageAlt}
-          tags={post.tags}
-        />
-      ))}
+    <p class='text-type mt-1.5 md:mt-4 text-center text-sm md:text-lg'>
+      Articles on modern web development
+    </p>
+    <div class='flex flex-col gap-6 md:gap-10 items-center px-4 mt-12 md:mt-16'>
+      {
+        posts
+          .reverse()
+          .map((post) => (
+            <PreviewCard
+              path={post.path}
+              title={post.title}
+              description={post.description}
+              imageUrl={post.imageUrl}
+              imageAlt={post.imageAlt}
+              tags={post.tags}
+            />
+          ))
+      }
     </div>
   </main>
 </Layout>
