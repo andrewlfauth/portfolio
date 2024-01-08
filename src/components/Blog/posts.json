@@ -8,5 +8,15 @@
     "imageUrl": "https://images.unsplash.com/photo-1502014822147-1aedfb0676e0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D",
     "imageAlt": "image by Ilnur Kalimullin",
     "tags": ["TailwindCSS", "Web Design", "JavaScript"]
+  },
+  {
+    "path": "technology-choices-behind-sitescout",
+    "title": "The Tech Stack Behind SiteScout.pro",
+    "pubDate": "2022-07-01",
+    "description": "Get a glimpse into the technology decisions that went into creating sitescout.pro.",
+    "author": "Andrew Fauth",
+    "imageUrl": "https://cdn.midjourney.com/fca5145b-91fe-4a26-a0b2-77fd625a39c6/0_0.webp",
+    "imageAlt": "image by Midjourney",
+    "tags": ["SaaS", "Site Scout"]
   }
 ]
