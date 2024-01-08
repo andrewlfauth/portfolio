@@ -8,11 +8,18 @@ export interface Props {
 }
 const { frontmatter } = Astro.props
 ---
-<Layout isMinimal={true} title={frontmatter.title} description={frontmatter.description}>
-  <main class="text-white max-w-3xl mx-auto mt-24 md:mt-28 lg:mt-32 mb-20 md:mb-32 prose prose-invert px-4 bg-primary">
+
+<Layout
+  isMinimal={true}
+  title={frontmatter.title}
+  description={frontmatter.description}
+>
+  <main
+    class='text-white max-w-3xl mx-auto mt-24 md:mt-28 lg:mt-32 mb-20 md:mb-32 prose prose-invert px-4 bg-primary prose-a:text-mat-red nightowl:prose-a:text-nightowl-orange catppuccin:prose-a:text-cat-blue'
+  >
     <slot />
-    <a href="/blog" class="mt-10 md:mt-16 block">Read more posts</a>
-    <section class="giscus mt-6 border-primary border-t pt-6"></section>
+    <a href='/blog' class='mt-10 md:mt-16 block'>Read more posts</a>
+    <section class='giscus mt-6 border-primary border-t pt-6'></section>
   </main>
 </Layout>
 
