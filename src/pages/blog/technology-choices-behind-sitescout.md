@@ -21,15 +21,15 @@ Here is a quick overview of the tech stack behind Site Scout.
 
 ### Remix
 
-Remix is a full stack web framework that places an emphasis on web standards. In Remix you use React on the front-end to build your UI, so obviously React is a big part of the stack aswell, but this is implied when your using Remix.
+Remix is a full stack web framework that places an emphasis on web standards. In Remix you use React on the front-end to build your UI, so obviously React is a big part of the stack as well, but this is implied when your using Remix.
 
 I chose Remix because it is extremely accessible for a front-end developer to create a full stack application. Remix <code>Loader</code> and <code>Action</code> functions make it extremely easy to do work on the server and the return data to your front-end React components.
 
-Remix V2 was released in the middle of developing Site Scout. Thankfully, the Remix team was focused on allowing for incremental adoption, and it was easy to opt into the new routing system and other changes with the help of <b>Future Flags</b>.
+Remix V2 was released in the middle of developing Site Scout. Thankfully, the Remix team was focused on allowing for incremental adoption, and it was easy to opt into the new routing conventions and other changes with the help of <b>Future Flags</b>.
 
 ### TailwindCSS
 
-I chose to use TailwinCSS for the ease and speed that it provides when styling a website. With Tailwind I was able to quickly make changes to styles until I was satisifed with them. This allowed me to focus more of my energy on developing features for the app.
+I chose to use TailwinCSS for the ease and speed that it provides when styling html. With Tailwind I was able to quickly make changes to styles until I was satisifed with them. This allowed me to focus more of my energy on developing features for the app.
 
 One critique I have heard about Tailwind is that it isn't a viable option for projects with a large team of developers. While I don't know if that is an accurate statement or simply the opinion of someone who perfers using SASS, I was the only dev working on Site Scout so that was never going to be an issue.
 
