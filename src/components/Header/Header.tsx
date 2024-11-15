@@ -3,7 +3,6 @@ import { gsap } from '../../utils/gsap'
 import { settings } from '../../stores/settings'
 import CursorToggle from './CursorToggle'
 import github from '../../assets/github.svg'
-import resume from '../../assets/resume.svg'
 import Nav from './Nav'
 
 function Header({ isMinimal }: { isMinimal?: boolean }) {
@@ -51,33 +50,27 @@ function Header({ isMinimal }: { isMinimal?: boolean }) {
       >
         <div
           ref={bgRef}
-          className="absolute top-0 left-0 bg-red-500 w-full h-full bg-primary duration-1000 opacity-0"
+          className='absolute top-0 left-0 bg-red-500 w-full h-full bg-primary duration-1000 opacity-0'
         ></div>
         <CursorToggle />
         {!isMinimal && (
           <div
             ref={btnsRef}
-            className="flex space-x-2 opacity-0 pointer-events-none translate-x-10"
+            className='flex space-x-2 opacity-0 pointer-events-none translate-x-10'
           >
             <button
-              class="h-10 w-20 md:w-[156px] md:h-[52px] rounded-lg border-2 border-primary text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-orange text-sm md:text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] bg-primary"
+              class='h-10 w-20 md:w-[156px] md:h-[52px] rounded-lg border-2 border-primary text-mat-red catppuccin:text-cat-pink nightowl:text-nightowl-orange text-sm md:text-2xl font-medium font-redhat flex items-center justify-center select-none hover:scale-[1.02] bg-primary'
               onClick={openContactForm}
             >
               contact
             </button>
             <a
-              href="https://github.com/andrewlfauth"
-              target="_blank"
-              rel="noreferrer"
-              class="w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary items-center justify-center select-none hover:scale-[1.02] hidden md:flex bg-primary"
+              href='https://github.com/andrewlfauth'
+              target='_blank'
+              rel='noreferrer'
+              class='w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary items-center justify-center select-none hover:scale-[1.02] hidden md:flex bg-primary'
             >
-              <img src={github} alt="github" class=" md:w-8" />
-            </a>
-            <a
-              href="/resume.pdf"
-              class="w-10 h-10 md:w-[52px] md:h-[52px] rounded-lg border-primary hidden md:flex items-center justify-center select-none hover:scale-[1.02] bg-primary"
-            >
-              <img src={resume} alt="resume" class="md:w-[28px]" />
+              <img src={github} alt='github' class=' md:w-8' />
             </a>
           </div>
         )}
