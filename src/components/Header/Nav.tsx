@@ -75,14 +75,14 @@ function Nav({ isMinimal }: { isMinimal?: boolean }) {
               isActive={activeSection == 'projects'}
             />
             <NavLink
-              href='/#bio'
-              text='Bio'
-              isActive={activeSection == 'bio'}
-            />
-            <NavLink
               href='/#freelance'
               text='Freelance'
               isActive={activeSection == 'freelance'}
+            />
+            <NavLink
+              href='/#bio'
+              text='Bio'
+              isActive={activeSection == 'bio'}
             />
           </>
         )}
