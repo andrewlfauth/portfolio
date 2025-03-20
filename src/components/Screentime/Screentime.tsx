@@ -62,23 +62,20 @@ function Screentime() {
   }, [])
 
   return (
-    <div class="pt-60">
-      <div className="pb-6 md:pb-8 lg:pb-16">
-        <h2 className="font-redhat text-4xl md:text-5xl text-title text-center pb-2">
+    <div class='pt-60'>
+      <div className='pb-6 md:pb-8 lg:pb-16'>
+        <h2 className='font-redhat text-4xl md:text-5xl text-title text-center pb-2'>
           Screen Time
         </h2>
         <Tabs tab={tab} setTab={setTab} />
       </div>
-      <div className="mx-auto w-fit mb-4 lg:translate-x-[-106px]">
-        <ProjectLinks
-          repo="https://github.com/andrewlfauth/screen-time"
-          site="https://screen-time.vercel.app"
-        />
+      <div className='mx-auto w-fit mb-4 lg:translate-x-[-106px]'>
+        <ProjectLinks repo='https://github.com/andrewlfauth/screen-time' />
       </div>
-      <div class="flex flex-col lg:flex-row lg:space-x-4 w-fit mx-auto">
+      <div class='flex flex-col lg:flex-row lg:space-x-4 w-fit mx-auto'>
         <div
           ref={cardsRef}
-          className="hidden lg:flex items-end flex-col space-y-2"
+          className='hidden lg:flex items-end flex-col space-y-2'
         >
           <MongoDB />
           <Remix />
@@ -88,13 +85,13 @@ function Screentime() {
         </div>
         <div
           ref={contentRef}
-          class="lg:w-[697px] md:h-[400px] px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0"
+          class='lg:w-[697px] md:h-[400px] px-6 md:px-0 md:w-[496.5px] mx-4 lg:mx-0'
         >
           {tab === 'screenshots' && <ScreenShots />}
           {tab === 'features' && <Features features={features} />}
           {tab === 'about' && <About paragraphs={about} />}
         </div>
-        <div className="flex flex-wrap space-x-2 mt-4 justify-center lg:hidden max-w-[496.5px] mx-auto px-4 md:px-0 md:mx-0 md:mt-14">
+        <div className='flex flex-wrap space-x-2 mt-4 justify-center lg:hidden max-w-[496.5px] mx-auto px-4 md:px-0 md:mx-0 md:mt-14'>
           <MongoDB />
           <Remix />
           <Tailwind />
